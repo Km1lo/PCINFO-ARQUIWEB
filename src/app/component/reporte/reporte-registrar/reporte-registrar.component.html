@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
@@ -25,14 +24,10 @@
                     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
                     <mat-menu #menu="matMenu">
                       <button mat-menu-item routerLink="/usuarios">USUARIOS</button>
-                        <button mat-menu-item routerLink="/clientes">CLIENTES</button>
-                        <button mat-menu-item routerLink="/administradores">ADMINISTRADORES</button>
-                        <button mat-menu-item routerLink="/reportes">REPORTES</button>
-                        <button mat-menu-item routerLink="/componentes">COMPONENTES</button>
-                        <button mat-menu-item routerLink="/comentarios">COMENTARIOS</button>
-                        <button mat-menu-item routerLink="/cuestionarios">CUESTIONARIOS</button>
-                        <button mat-menu-item routerLink="/recomendacion">RECOMENDACIONES</button>
-
+                      <button mat-menu-item routerLink="/clientes">CLIENTES</button>
+                      <button mat-menu-item routerLink="/administradores">ADMINISTRADORES</button>
+                      <button mat-menu-item routerLink="/reportes">REPORTES</button>
+                      <button mat-menu-item routerLink="/componentes">COMPONENTES</button>
                     </mat-menu>
                   </li>
                   <li class="nav-item px-3">
@@ -52,43 +47,43 @@
       </div>
   </nav>
 </header>
-
-
-
 <body>
   <div class="container-lg" style="margin-top: 50px;">
     <div style="text-align: center;">
-      <h1>Registar Comentarios</h1>
+      <h1>Registar Reportes</h1>
     </div>
   </div>
- <ng-container  >
+
   <form [formGroup]="form" (submit)="aceptar()">
-
     <mat-form-field class="example-full-width">
-      <mat-label>Id</mat-label>
-      <input matInput hidden placeholder="id" formControlName="id">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field class="example-full-width">
-      <mat-label>Comentario</mat-label>
-      <input matInput placeholder="comentario" formControlName="comentario">
+      <mat-label>Código</mat-label>
+      <input matInput hidden placeholder="Código" formControlName="id">
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill">
       <mat-label>Fecha</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="fecha" max="maxFecha">
+      <input matInput [matDatepicker]="picker"  placeholder="fecha" formControlName="fecha" max="maxFecha">
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion</mat-label>
+      <input matInput required placeholder="Descripcion" formControlName="descripcion">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Estado</mat-label>
+      <input matInput required placeholder="Estado" formControlName="estado">
+    </mat-form-field>
+    <br>
 
     <button mat-raised-button type="submit" color="primary">Aceptar</button>
-    <button mat-raised-button color="warn" routerLink="/comentarios">Cancelar</button>
+    <button mat-raised-button color="warn" routerLink="/reportes">Cancelar</button>
     <p>{{mensaje}}</p>
 
   </form>
-</ng-container>
+
 </body>
 </html>

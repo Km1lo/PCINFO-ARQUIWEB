@@ -11,8 +11,6 @@ import { MatNativeDateModule} from '@angular/material/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +18,11 @@ import { ComentarioComponent } from './component/comentario/comentario.component
 import { ComentarioListarComponent } from './component/comentario/comentario-listar/comentario-listar.component';
 import { ComentarioRegistrarComponent } from './component/comentario/comentario-registrar/comentario-registrar.component';
 import { ComentarioDialogoComponent } from './component/comentario/comentario-listar/comentario-dialogo/comentario-dialogo.component';
+import { ReporteComponent } from './component/reporte/reporte.component';
+import { ReporteListarComponent } from './component/reporte/reporte-listar/reporte-listar.component';
+import { ReporteRegistrarComponent } from './component/reporte/reporte-registrar/reporte-registrar.component';
+import { ReporteDialogoComponent } from './component/reporte/reporte-listar/reporte-dialogo/reporte-dialogo.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,11 @@ import { ComentarioDialogoComponent } from './component/comentario/comentario-li
     ComentarioComponent,
     ComentarioListarComponent,
     ComentarioRegistrarComponent,
-    ComentarioDialogoComponent
+    ComentarioDialogoComponent,
+    ReporteComponent,
+    ReporteListarComponent,
+    ReporteRegistrarComponent,
+    ReporteDialogoComponent
   ],
   imports: [
     BrowserModule,
