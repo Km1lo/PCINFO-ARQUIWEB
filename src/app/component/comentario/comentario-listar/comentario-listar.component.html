@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comentario</title>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" width="50" height="50">
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item px-3">
+                      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+                      <mat-menu #menu="matMenu">
+                        <button mat-menu-item routerLink="/usuarios">USUARIOS</button>
+                        <button mat-menu-item routerLink="/clientes">CLIENTES</button>
+                        <button mat-menu-item routerLink="/administradores">ADMINISTRADORES</button>
+                        <button mat-menu-item routerLink="/reportes">REPORTES</button>
+                        <button mat-menu-item routerLink="/componentes">COMPONENTES</button>
+                        <button mat-menu-item routerLink="/comentarios">COMENTARIOS</button>
+                        <button mat-menu-item routerLink="/cuestionarios">CUESTIONARIOS</button>
+                        <button mat-menu-item routerLink="/recomendacion">RECOMENDACIONES</button>
+                      </mat-menu>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link active" aria-current="page" href="#">Componentes</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link active" aria-current="page" href="#">Formulario</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
+                    </li>
+                    <li>
+                        <button class="btn btn-danger" type="button">Iniciar sesión</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>COMENTARIO</h1>
+    </div>
+  <mat-grid-list cols="2" rowHeight="4em">
+    <mat-grid-tile>
+      <div style="text-align: right;">
+        <button mat-raised-button color="primary"
+                routerLink="/comentarios/registrar">Nuevo</button>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput (keyup)="filter($event)" placeholder="Buscar">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="comentario">
+          <th mat-header-cell *matHeaderCellDef> Comentario </th>
+          <td mat-cell *matCellDef="let element"> {{element.comentario}} </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef> Fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.fecha|date:'dd/MM/yyyy'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="accion01">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="warn"
+              [routerLink]="['/comentarios/editar',element.id]">Actualizar</button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="accion2">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="accent" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                     showFirstLastButtons
+                     aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  </div>
+
+
+</body>
+</html>
