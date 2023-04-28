@@ -15,7 +15,7 @@ export class ReporteListarComponent {
 dataSource:MatTableDataSource<Reporte> = new MatTableDataSource();
 idMayor: number = 0;
 
-displayedColumns: string[] = ['id_reporte', 'id_admin', 'descripcion', 'fecha', 'estado','accion01','accion2']
+displayedColumns: string[] = ['id_reporte', 'descripcion', 'fecha', 'estado','accion01','accion2']
 
 constructor(private aS:ReporteService,private dialog: MatDialog) { }
 ngOnInit(): void {
