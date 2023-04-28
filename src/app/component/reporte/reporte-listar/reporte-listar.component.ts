@@ -1,21 +1,25 @@
-import { Component,OnInit } from '@angular/core';
+import { AfterViewInit, Component,OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Reporte } from 'src/app/model/reporte';
 import { ReporteService } from 'src/app/service/reporte.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ReporteDialogoComponent } from './reporte-dialogo/reporte-dialogo.component';
+import {MatPaginator} from '@angular/material/paginator';
+import { ViewChild } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-reporte-listar',
   templateUrl: './reporte-listar.component.html',
   styleUrls: ['./reporte-listar.component.css']
 })
-export class ReporteListarComponent {
+export class ReporteListarComponent implements OnInit {
 
 dataSource:MatTableDataSource<Reporte> = new MatTableDataSource();
 idMayor: number = 0;
-
 displayedColumns: string[] = ['id_reporte', 'descripcion', 'fecha', 'estado','accion01','accion2']
+
 
 constructor(private aS:ReporteService,private dialog: MatDialog) { }
 ngOnInit(): void {
@@ -25,6 +29,7 @@ ngOnInit(): void {
   this.aS.getConfirmDelete().subscribe(data => {
     data == true ? this.eliminar(this.idMayor) : false;
   })
+
 }
 
 confirm(id: number) {
@@ -43,3 +48,4 @@ filter(e: any) {
 }
 
 }
+
