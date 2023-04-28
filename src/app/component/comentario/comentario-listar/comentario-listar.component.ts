@@ -4,12 +4,16 @@ import { Comentario } from 'src/app/model/comentario';
 import { ComentarioService } from 'src/app/service/comentario.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ComentarioDialogoComponent } from './comentario-dialogo/comentario-dialogo.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { ViewChild } from '@angular/core';
 @Component({
   selector: 'app-comentario-listar',
   templateUrl: './comentario-listar.component.html',
   styleUrls: ['./comentario-listar.component.css']
 })
 export class ComentarioListarComponent implements OnInit {
+
+
   dataSource:MatTableDataSource<Comentario> = new MatTableDataSource();
   idMayor: number = 0;
 
