@@ -28,6 +28,9 @@
                       <button mat-menu-item routerLink="/administradores">ADMINISTRADORES</button>
                       <button mat-menu-item routerLink="/reportes">REPORTES</button>
                       <button mat-menu-item routerLink="/componentes">COMPONENTES</button>
+                      <button mat-menu-item routerLink="/comentarios">COMENTARIOS</button>
+                      <button mat-menu-item routerLink="/cuestionarios">CUESTIONARIOS</button>
+                      <button mat-menu-item routerLink="/recomendacion">RECOMENDACIONES</button>
                     </mat-menu>
                   </li>
                   <li class="nav-item px-3">
@@ -73,9 +76,13 @@
       <input matInput required placeholder="Descripcion" formControlName="descripcion">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Estado</mat-label>
-      <input matInput required placeholder="Estado" formControlName="estado">
+      <mat-select placeholder="Estado" formControlName="estado">
+        <mat-option value="En proceso">En Proceso</mat-option>
+        <mat-option value="Finalizado">Finalizado</mat-option>
+        <mat-option value="Iniciando">Iniciando</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
 

@@ -22,7 +22,7 @@ import { ReporteComponent } from './component/reporte/reporte.component';
 import { ReporteListarComponent } from './component/reporte/reporte-listar/reporte-listar.component';
 import { ReporteRegistrarComponent } from './component/reporte/reporte-registrar/reporte-registrar.component';
 import { ReporteDialogoComponent } from './component/reporte/reporte-listar/reporte-dialogo/reporte-dialogo.component';
-
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,8 @@ import { ReporteDialogoComponent } from './component/reporte/reporte-listar/repo
     MatNativeDateModule,
     MatGridListModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
 
   ],
   providers: [],

@@ -67,7 +67,7 @@ module.exports = function () {
         id: 1,
         descripcion:"Problemas de conectividad",
         fecha:"2022-06-12",
-        estado:"Resuelto",
+        estado:"Iniciando",
         },
         {
         id: 2,
