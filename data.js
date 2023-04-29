@@ -60,44 +60,74 @@ module.exports = function () {
         Overclocking: false,
         Marca_Procesador: "AMD",
         Programas_used: "",
-      }
+      },
     ],
-      reporte:[
-        {
+    reporte: [
+      {
         id: 1,
-        descripcion:"Problemas de conectividad",
-        fecha:"2022-06-12",
-        estado:"Iniciando",
-        },
-        {
+        descripcion: "Problemas de conectividad",
+        fecha: "2022-06-12",
+        estado: "Pendiente",
+      },
+      {
         id: 2,
-        descripcion:"Fallas en registrar sesion",
-        fecha:"2023-04-5",
-        estado:"En proceso",
-        },
-        {
+        descripcion: "Fallas en registrar sesion",
+        fecha: "2022-06-12",
+        estado: "En proceso",
+      },
+      {
         id: 3,
-        descripcion:"Problemas en la base de datos",
-        fecha:"2022-12-20",
-        estado:"Finalizado",
-        },
+        descripcion: "Problemas en la base de datos",
+        fecha: "2022-12-20",
+        estado: "Finalizado",
+      },
+      {
+        id: 4,
+        descripcion: "Error de lectura en la tabla de clientes",
+        fecha: "2022-08-20",
+        estado: "En proceso",
+      },
+      {
+        id: 5,
+        descripcion: "Problemas de conexión a la base de datos",
+        fecha: "2022-07-21",
+        estado: "Pendiente",
+      },
+      {
+        id: 6,
+        descripcion: "Error en la generación de recomendacion de pc",
+        fecha: "2022-12-24",
+        estado: "Finalizado",
+      },
+      {
+        id: 7,
+        descripcion: "Error en la funcionalidad de inicio de sesión",
+        fecha: "2021-12-20",
+        estado: "En proceso",
+      },
+      {
+        id: 8,
+        descripcion: "Problemas de rendimiento en la plataforma",
+        fecha: "2023-01-20",
+        estado: "Pendiente",
+      },
     ],
     comentario: [
       {
         id: 1,
         comentario: "Gracias por la recomendacion",
-        fecha: "2023-04-10"
+        fecha: "2023-04-10",
       },
       {
         id: 2,
         comentario: "Oigan capos su página me savlo de apuros thanks",
-        fecha: "2023-04-11"
+        fecha: "2023-04-11",
       },
       {
         id: 3,
         comentario: "Me guto pero espero un poco mas de recomendaciones",
-        fecha: "2023-04-12"
-      }
+        fecha: "2023-04-12",
+      },
     ],
     administrador: [
       {
@@ -107,7 +137,7 @@ module.exports = function () {
         horario: "8:00am - 5:00pm",
         cumpleanos: "1990-06-12",
         estado_vacaciones: false,
-        estado_contrato: true
+        estado_contrato: true,
       },
       {
         id: 2,
@@ -116,7 +146,7 @@ module.exports = function () {
         horario: "10:00am - 7:00pm",
         cumpleanos: "1985-04-05",
         estado_vacaciones: false,
-        estado_contrato: true
+        estado_contrato: true,
       },
       {
         id: 3,
@@ -125,36 +155,37 @@ module.exports = function () {
         horario: "9:00am - 6:00pm",
         cumpleanos: "1992-02-15",
         estado_vacaciones: false,
-        estado_contrato: true
-      }
+        estado_contrato: true,
+      },
     ],
     recomendacion: [
       {
-        id:1,
+        id: 1,
         valoracion_user: 4,
         notas_adicionales: "Me gustó la recomendación brindada",
       },
       {
         id: 2,
         valoracion_user: 5,
-        notas_adicionales:"Me encantó la sugerencia que se me ha dado",
+        notas_adicionales: "Me encantó la sugerencia que se me ha dado",
       },
       {
         id: 3,
         valoracion_user: 3,
-        notas_adicionales:"Estoy un poco en desacuerdo con la recomendación dada",
+        notas_adicionales:
+          "Estoy un poco en desacuerdo con la recomendación dada",
       },
       {
         id: 4,
         valoracion_user: 2,
-        notas_adicionales:"No estoy tan de acuerdo con la recomendación",
+        notas_adicionales: "No estoy tan de acuerdo con la recomendación",
       },
       {
         id: 5,
         valoracion_user: 4,
-        notas_adicionales:"Me agrada la recomendación que se me ha brindado",
-      }
-    ]
-  }
-  return data
-}
+        notas_adicionales: "Me agrada la recomendación que se me ha brindado",
+      },
+    ],
+  };
+  return data;
+};

@@ -4,8 +4,8 @@ import { Reporte } from 'src/app/model/reporte';
 import { ReporteService } from 'src/app/service/reporte.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ReporteDialogoComponent } from './reporte-dialogo/reporte-dialogo.component';
-import {MatPaginator} from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 
@@ -19,12 +19,14 @@ export class ReporteListarComponent implements OnInit {
 dataSource:MatTableDataSource<Reporte> = new MatTableDataSource();
 idMayor: number = 0;
 displayedColumns: string[] = ['id_reporte', 'descripcion', 'fecha', 'estado','accion01','accion2']
+@ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
 
 constructor(private aS:ReporteService,private dialog: MatDialog) { }
 ngOnInit(): void {
   this.aS.list().subscribe(data=>{
     this.dataSource= new MatTableDataSource(data);
+    this.dataSource.paginator = this.paginator
   })
   this.aS.getConfirmDelete().subscribe(data => {
     data == true ? this.eliminar(this.idMayor) : false;
