@@ -24,6 +24,7 @@ export class AdministradorListarComponent implements OnInit {
   ngOnInit(): void {
     this.aS.list().subscribe(data=>{
       this.dataSource= new MatTableDataSource(data);
+        this.dataSource.paginator = this.paginator;
     })
     this.aS.getConfirmDelete().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;
