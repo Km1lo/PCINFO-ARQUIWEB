@@ -29,6 +29,10 @@ import { AdministradorListarComponent } from './component/administrador/administ
 import { AdministradorRegistrarComponent } from './component/administrador/administrador-registrar/administrador-registrar.component';
 import { AdministradorDialogoComponent } from './component/administrador/administrador-listar/administrador-dialogo/administrador-dialogo.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RecomendacionComponent } from './component/recomendacion/recomendacion.component';
+import { RecomendacionListarComponent } from './component/recomendacion/recomendacion-listar/recomendacion-listar.component';
+import { RecomendacionRegistrarComponent } from './component/recomendacion/recomendacion-registrar/recomendacion-registrar.component';
+import { RecomendacionDialogoComponent } from './component/recomendacion/recomendacion-listar/recomendacion-dialogo/recomendacion-dialogo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     AdministradorComponent,
     AdministradorListarComponent,
     AdministradorRegistrarComponent,
-    AdministradorDialogoComponent
+    AdministradorDialogoComponent,
+    RecomendacionComponent,
+    RecomendacionListarComponent,
+    RecomendacionRegistrarComponent,
+    RecomendacionDialogoComponent
   ],
   imports: [
     BrowserModule,

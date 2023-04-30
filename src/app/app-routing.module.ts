@@ -6,6 +6,8 @@ import { ReporteComponent } from './component/reporte/reporte.component';
 import { ReporteRegistrarComponent } from './component/reporte/reporte-registrar/reporte-registrar.component';
 import { AdministradorComponent } from './component/administrador/administrador.component';
 import { AdministradorRegistrarComponent } from './component/administrador/administrador-registrar/administrador-registrar.component';
+import { RecomendacionComponent } from './component/recomendacion/recomendacion.component';
+import { RecomendacionRegistrarComponent } from './component/recomendacion/recomendacion-registrar/recomendacion-registrar.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,16 @@ const routes: Routes = [
       },
       {
         path: 'editar/:id', component: AdministradorRegistrarComponent
+      }
+    ]
+  },
+  {
+    path: 'recomendacion', component: RecomendacionComponent, children: [
+      {
+        path: 'registrar', component: RecomendacionRegistrarComponent
+      },
+      {
+        path: 'editar/:id', component: RecomendacionRegistrarComponent
       }
     ]
   }
