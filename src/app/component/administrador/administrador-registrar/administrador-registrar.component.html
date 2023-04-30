@@ -61,6 +61,7 @@
     </div>
   </div>
   <ng-container>
+    <div class="container" style="text-align: center;">
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field class="example-full-width">
         <mat-label>id</mat-label>
@@ -91,24 +92,34 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <br>
+
+      <div class="center">
       <div class="form-check">
         <mat-checkbox formControlName="estado_vacaciones" class="form-check-input">
           Vacaciones
         </mat-checkbox>
       </div>
+    </div>
       <br>
+    <div class="center">
       <div class="form-check">
         <mat-checkbox formControlName="estado_contrato" class="form-check-input">
           Contrato
         </mat-checkbox>
       </div>
-      <br>
+    </div>
 
-      <button mat-raised-button type="submit" color="primary">Aceptar</button>
-      <button mat-raised-button color="warn" routerLink="/administradores">Cancelar</button>
+      <br>
+      <!-- Este es un comentario de una sola línea -->
+      <button mat-raised-button type="submit" color="warn" class="mx-5">Aceptar</button>
+
+      <button mat-raised-button color="warn" routerLink="/administradores" class="mx-0">Cancelar</button>
+
       <p>{{mensaje}}</p>
 
+
     </form>
+  </div>
   </ng-container>
 
 </body>
