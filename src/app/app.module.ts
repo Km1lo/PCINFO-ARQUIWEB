@@ -33,6 +33,10 @@ import { RecomendacionComponent } from './component/recomendacion/recomendacion.
 import { RecomendacionListarComponent } from './component/recomendacion/recomendacion-listar/recomendacion-listar.component';
 import { RecomendacionRegistrarComponent } from './component/recomendacion/recomendacion-registrar/recomendacion-registrar.component';
 import { RecomendacionDialogoComponent } from './component/recomendacion/recomendacion-listar/recomendacion-dialogo/recomendacion-dialogo.component';
+import { CuestionarioComponent } from './component/cuestionario/cuestionario.component';
+import { CuestionarioListarComponent } from './component/cuestionario/cuestionario-listar/cuestionario-listar.component';
+import { CuestionarioRegistrarComponent } from './component/cuestionario/cuestionario-registrar/cuestionario-registrar.component';
+import { CuestionarioDialogoComponent } from './component/cuestionario/cuestionario-listar/cuestionario-dialogo/cuestionario-dialogo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +55,11 @@ import { RecomendacionDialogoComponent } from './component/recomendacion/recomen
     RecomendacionComponent,
     RecomendacionListarComponent,
     RecomendacionRegistrarComponent,
-    RecomendacionDialogoComponent
+    RecomendacionDialogoComponent,
+    CuestionarioComponent,
+    CuestionarioListarComponent,
+    CuestionarioRegistrarComponent,
+    CuestionarioDialogoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>Registar Cuestionarios</h1>
+    </div>
+  </div>
+ <ng-container  >
+  <div class="container" style="text-align: center;">
+  <form [formGroup]="form" (submit)="aceptar()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Código</mat-label>
+      <input matInput hidden placeholder="Código" formControlName="id">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Formulario</mat-label>
+      <input matInput required placeholder="Formulario" formControlName="tipo_form">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Uso</mat-label>
+      <input matInput required placeholder="Uso" formControlName="Uso_de_PC">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Presupuesto</mat-label>
+      <input matInput required placeholder="Presupuesto" formControlName="Presupuesto">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Tamaño</mat-label>
+      <input matInput required placeholder="Tamaño" formControlName="Tamano_del_PC">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Diseño</mat-label>
+      <input matInput required placeholder="Diseño" formControlName="Diseno">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Tipo de refrigeración</mat-label>
+      <input matInput required placeholder="Tipo de refrigeración" formControlName="Tipo_de_refrigeracion">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Overclocking</mat-label>
+      <input matInput required placeholder="Overclocking" formControlName="Overclocking">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Marca del procesador</mat-label>
+      <input matInput required placeholder="Marca del procesador" formControlName="Marca_Procesador">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Programas más usados (opcional)</mat-label>
+      <input matInput required placeholder="Progamas usados" formControlName="Programas_used">
+    </mat-form-field>
+    <br>
+
+    <button mat-raised-button type="submit" color="primary">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/cuestionarios">Cancelar</button>
+    <p>{{mensaje}}</p>
+  </form>
+</div>
+</ng-container>
+</body>
+</html>
