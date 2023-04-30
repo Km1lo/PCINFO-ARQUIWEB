@@ -76,14 +76,14 @@ export class AdministradorRegistrarComponent implements OnInit {
       if (this.edicion) {
         //registrarlo en la base de  datos
         this.AdministradorService.update(this.administrador).subscribe((data) =>
-          this.router.navigate(['administradores']).then(() => {
+          this.router.navigate(['administradores/mostrar']).then(() => {
             window.location.reload();
           })
         );
       } else {
         //registrarlo en la base de  datos
         this.AdministradorService.insert(this.administrador).subscribe((data) =>
-          this.router.navigate(['administradores']).then(() => {
+          this.router.navigate(['administradores/mostrar']).then(() => {
             window.location.reload();
           })
         );

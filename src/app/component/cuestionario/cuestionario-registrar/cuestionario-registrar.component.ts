@@ -84,14 +84,14 @@ export class CuestionarioRegistrarComponent implements OnInit {
       if (this.edicion) {
         //registrarlo en la base de  datos
         this.CuestionarioService.update(this.cuestionario).subscribe((data) =>
-          this.router.navigate(['cuestionarios']).then(() => {
+          this.router.navigate(['administradores/mostrar']).then(() => {
             window.location.reload();
           })
         );
       } else {
         //registrarlo en la base de  datos
         this.CuestionarioService.insert(this.cuestionario).subscribe((data) =>
-          this.router.navigate(['cuestionarios']).then(() => {
+          this.router.navigate(['administradores/mostrar']).then(() => {
             window.location.reload();
           })
         );

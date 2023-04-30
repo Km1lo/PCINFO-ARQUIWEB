@@ -37,6 +37,11 @@ import { CuestionarioComponent } from './component/cuestionario/cuestionario.com
 import { CuestionarioListarComponent } from './component/cuestionario/cuestionario-listar/cuestionario-listar.component';
 import { CuestionarioRegistrarComponent } from './component/cuestionario/cuestionario-registrar/cuestionario-registrar.component';
 import { CuestionarioDialogoComponent } from './component/cuestionario/cuestionario-listar/cuestionario-dialogo/cuestionario-dialogo.component';
+import { IndexaComponent } from './component/indexa/indexa.component';
+import { IndexMostrarComponent } from './component/indexa/index-mostrar/index-mostrar.component';
+import { LoginComponent } from './component/login/login.component';
+import { LoginMostrarComponent } from './component/login/login-mostrar/login-mostrar.component';
+import { AdministradorIndexComponent } from './component/administrador/administrador-index/administrador-index.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +64,12 @@ import { CuestionarioDialogoComponent } from './component/cuestionario/cuestiona
     CuestionarioComponent,
     CuestionarioListarComponent,
     CuestionarioRegistrarComponent,
-    CuestionarioDialogoComponent
+    CuestionarioDialogoComponent,
+    IndexaComponent,
+    IndexMostrarComponent,
+    LoginComponent,
+    LoginMostrarComponent,
+    AdministradorIndexComponent
   ],
   imports: [
     BrowserModule,

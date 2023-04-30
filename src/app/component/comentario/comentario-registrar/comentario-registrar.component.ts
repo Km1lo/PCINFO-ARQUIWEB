@@ -59,13 +59,13 @@ export class ComentarioRegistrarComponent implements OnInit {
     if(this.form.value['comentario'].length > 0 && this.form.value['fecha'] instanceof Date){
       if(this.edicion){
         this.ComentarioService.update(this.comentarioo).subscribe((data) =>
-          this.router.navigate(['comentarios']).then(() => {
+          this.router.navigate(['administradores/mostrar']).then(() => {
             window.location.reload();
           })
         );
       } else {
         this.ComentarioService.insert(this.comentarioo).subscribe((data) =>
-          this.router.navigate(['comentarios']).then(() => {
+          this.router.navigate(['administradores/mostrar']).then(() => {
             window.location.reload();
           })
         );

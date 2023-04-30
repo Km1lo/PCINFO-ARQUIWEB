@@ -1,0 +1,139 @@
+/*HEADER*/
+a.color{
+  color: white;
+}
+
+.color:hover{
+  color: #E52D27;
+}
+
+a.colorbtn{
+  color: white;
+  text-decoration: none;
+}
+
+a.colorbtn:hover{
+  color: #fd9b98;
+}
+
+
+/*FOOTER*/
+.fab{
+  font-size: 30px;
+}
+
+.fab:hover{
+  color: #E52D27;
+}
+
+.fa-sharp{
+  color: white;
+  font-size: 50px;
+}
+
+.fa-sharp:hover{
+  color: #E52D27;
+}
+
+.color{
+  color: rgb(139, 139, 139);
+}
+
+.color:hover{
+  color: #E52D27;
+}
+/*FIN FOOTER*/
+
+
+
+.contenedor{
+  width: 100%;
+  padding: 15px;
+}
+/*formulario login*/
+.formulario{
+  background: rgb(67, 67, 67);
+  padding: 3px;
+  margin-top: 50px;
+}
+/*formulario register*/
+.formularioR{
+  background: rgb(67, 67, 67);
+  padding: 3px;
+  margin-top: -1px;;
+}
+
+/*titulo*/
+h1{
+  text-align: center;
+  color: #FFF;
+  font-size: 40px;
+}
+
+/*estilos*/
+input[type="text"],
+input[type="password"]{
+  font-size: 20px;
+  width: 82%;
+  padding: 10px;
+  border:none;
+}
+
+.input-contenedor{
+  margin-bottom: 15px;
+  background: white;
+  padding: 3px;
+  border-radius: 10px;
+
+  background-color: #eee;
+  border: 0;
+}
+.icon{
+  min-width: 50px;
+  text-align: center;
+  color: rgb(105, 105, 105);
+}
+.button{
+  border:none;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  background: #E52D27;
+  padding: 15px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.button:hover{
+  background: #ff6e69;
+}
+
+/*parrafo*/
+p{
+  text-align: center ;
+  color: white;
+}
+.link{
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+.link:hover{
+  color:#E52D27;
+}
+
+@media(min-width:760px)
+{
+  .formulario{
+      margin:auto;
+      width: 500px;
+      margin-top: 50px;
+      border-radius: 5%;
+  }
+  .formularioR{
+      margin:auto;
+      width: 500px;
+      margin-top: -12px;
+      border-radius: 5%;
+  }
+
+}

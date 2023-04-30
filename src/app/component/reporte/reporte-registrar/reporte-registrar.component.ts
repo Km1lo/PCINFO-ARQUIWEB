@@ -69,14 +69,14 @@ export class ReporteRegistrarComponent implements OnInit{
         if (this.edicion) {
           //registrarlo en la base de  datos
           this.ReporteService.update(this.reporte).subscribe((data) =>
-            this.router.navigate(['reportes']).then(() => {
+            this.router.navigate(['administradores/mostrar']).then(() => {
               window.location.reload();
             })
           );
         } else {
           //registrarlo en la base de  datos
           this.ReporteService.insert(this.reporte).subscribe((data) =>
-            this.router.navigate(['reportes']).then(() => {
+            this.router.navigate(['administradores/mostrar']).then(() => {
               window.location.reload();
             })
           );

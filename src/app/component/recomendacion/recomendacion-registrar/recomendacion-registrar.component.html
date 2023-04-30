@@ -68,9 +68,15 @@
       <input matInput hidden placeholder="Código" formControlName="id">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
-      <mat-label>Valoracion</mat-label>
-      <input matInput required placeholder="valoracion_user" formControlName="valoracion_user">
+    <mat-form-field>
+      <mat-label>Calificación</mat-label>
+      <mat-select placeholder="Calificación" formControlName="valoracion_user">
+        <mat-option value="1">⭐ ★ ★ ★ ★</mat-option>
+        <mat-option value="2">⭐⭐ ★ ★ ★</mat-option>
+        <mat-option value="3">⭐⭐⭐ ★ ★</mat-option>
+        <mat-option value="4">⭐⭐⭐⭐ ★</mat-option>
+        <mat-option value="5">⭐⭐⭐⭐⭐</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width">
@@ -82,7 +88,7 @@
 
 
     <button mat-raised-button type="submit" color="primary">Aceptar</button>
-    <button mat-raised-button color="warn" routerLink="/recomendacion">Cancelar</button>
+    <button mat-raised-button color="warn" routerLink="/administradores/mostrar">Cancelar</button>
     <p>{{mensaje}}</p>
 
   </form>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #banner{
+    height: 100vh;
+    background-size: cover;
+
+    width: 100%;
+      height: 600px;
+    animation: banner 10s infinite linear alternate;
+     background-size: 100% 100%;
+      /*position: relative;*/
+
+          display: flex;
+         justify-content: center;
+          align-items: center;
+
+     background-size: cover;
+      background-position: center center;
+      height: 100vh;
+    }
+    #ban-comp
+    {
+        height:fit-content;
+      background-size: cover;
+
+
+    animation: banner 10s infinite linear alternate;
+
+
+    }
+    @keyframes banner {
+     0%,25%{
+         background-image: linear-gradient(
+         0deg,
+             rgba(0,0,0,0.5),
+             rgba(0,0,0,0.5)
+      ),url(/assets/img/banner/banner1.jpg);
+
+         }
+          35%,60%{
+            background-image: linear-gradient(
+              0deg,
+              rgba(0,0,0,0.5),
+           rgba(0,0,0,0.5)
+           ),url(/assets/img/banner/banner2.jpg);
+        }
+         55%,100%{
+          background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+          rgba(0,0,0,0.5)
+         ),url(/assets/img/banner/banner3.jpg);
+        }
+     }
+     @keyframes ban-comp {
+     0%,25%{
+         background-image: linear-gradient(
+         0deg,
+             rgba(0,0,0,0.5),
+             rgba(0,0,0,0.5)
+      ),url(./Img/banner/banner1.jpg);
+
+         }
+          35%,60%{
+            background-image: linear-gradient(
+              0deg,
+              rgba(0,0,0,0.5),
+           rgba(0,0,0,0.5)
+           ),url(./Img/banner/banner2.jpg);
+        }
+         55%,100%{
+          background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+          rgba(0,0,0,0.5)
+         ),url(./Img/banner/banner3.jpg);
+        }
+     }
+</style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+          </a>
+
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page" href="#">Menu</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page" href="#">Componentes</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page" href="#">Formulario</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
+              </li>
+              <li>
+                  <button class="btn btn-danger" type="button" routerLink="/login">Iniciar sesión</button>
+              </li>
+          </ul>
+          </div>
+      </div>
+  </nav>
+
+
+</header>
+
+
+<section class="imagen" id="banner" >
+<section id="BienvenidosPc" class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light mb-4" style="color: white; font-size: 45px; letter-spacing: 2px;"><strong>Bienvenidos a PC Info</strong></h1>
+            <p class="lead  mb-4" style="color: white;" >“PCInfo” es un aplicativo web que se enfoca en poder orientar y facilitar la adquisición de componentes de computadoras a personas que no tengan un conocimiento detallado sobre el tema sin que cometan el error de adquirir un producto que exceda sus necesidades.
+                La misión de “PCInfo” es que cualquier persona tenga la seguridad y acceso a la información de los componentes de computadora más adecuados a su necesidad.
+                La visión de “PCInfo” es llegar a ser una plataforma reconocida a nivel nacional al brindar la orientación sobre los componentes de computadora.
+            </p>
+            <p>
+                <button class="btn btn btn-danger px-4" type="submit" style="background-color: #E52D27;">Ver más</button>
+            </p>
+        </div>
+    </div>
+</section>
+<!-- <section id="BienvenidosPc"  class="text-center container-fluid">
+    <div class="row py-lg-5" >
+        <div class="col-lg-6 col-md-8 mx-auto ">
+            <h1 class="fw-light mb-4" style="color: white; font-size: 60px; letter-spacing: 2px;"><strong>Bienvenidos a PC Info</strong></h1>
+            <p class="lead  mb-4" style="color: white; line-height: 1.7;">“PCInfo” es un aplicativo web que se enfoca en poder orientar y facilitar la adquisición de componentes de computadoras a personas que no tengan un conocimiento detallado sobre el tema sin que cometan el error de adquirir un producto que exceda sus necesidades.
+                La misión de “PCInfo” es que cualquier persona tenga la seguridad y acceso a la información de los componentes de computadora más adecuados a su necesidad.
+                La visión de “PCInfo” es llegar a ser una plataforma reconocida a nivel nacional al brindar la orientación sobre los componentes de computadora.
+            </p>
+            <p>
+                <button class="btn btn btn-danger px-4" type="submit" style="background-color: #E52D27;">Ver más</button>
+            </p>
+        </div>
+    </div>
+</section> -->
+</section>
+
+<section id="ban-comp"  >
+<section id="ComponentesPC">
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/madre.png" alt="">
+                <h3>Placa Madre</h3>
+            </div>
+            <div class="face back">
+                <h3>Placa Madre</h3>
+                <p>La placa base es una tarjeta de circuito impreso a la que se conectan los componentes que constituyen la computadora</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/gpu.webp" alt="">
+                <h3>GPU</h3>
+            </div>
+            <div class="face back">
+                <h3>GPU</h3>
+                <p>Una unidad de procesamiento gráfico o procesador gráfico es un coprocesador dedicado al procesamiento de gráficos</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/ssd.png" alt="">
+                <h3>Memoria SSD</h3>
+            </div>
+            <div class="face back">
+                <h3>Memoria SSD</h3>
+                <p>Un SDD (unidad de estado sólido) es una nueva generación de dispositivos de almacenamiento que se emplea en equipos.</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/ram.webp" alt="">
+                <h3>Memoria RAM</h3>
+            </div>
+            <div class="face back">
+                <h3>Memoria RAM</h3>
+                <p>Es la memoria de corto plazo del computador. Su función es recordar la información que tienes en cada aplicacion abierta en el computador</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/cpu.webp" alt="">
+                <h3>Procesador</h3>
+            </div>
+            <div class="face back">
+                <h3>Procesador</h3>
+                <p>Una unidad central de procesamiento,es una pieza que permite que tu computadora interactúe con todas las aplicaciones</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="face front">
+                <img src="assets/img/componentes/fuente.webp" alt="">
+                <h3>Fuente de alimentación</h3>
+            </div>
+            <div class="face back">
+                <h3>Fuente de alimentación</h3>
+                <p>Una fuente de alimentación se encarga de transformar la corriente alterna (AC), que es la corriente que proviene directamente de la línea eléctrica, en corriente continua (DC)</p>
+                <div class="link">
+                    <a href="#">Details</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+
+<section>
+<div class="album" style="background-color: #121212;">
+<div class="container">
+    <footer class="py-4">
+        <div class="row">
+            <div class="col-6 col-md-4 mb-3">
+                <h5 style="color: white; font-size: 25px;" >Mejores Marcas: </h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="https://www.asus.com" target="_blank" class="nav-link p-0 color">ASUS</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.gigabyte.com"  target="_blank" class="nav-link p-0 color">Gigabyte</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.benq.com/es-pe/index.html"  target="_blank" class="nav-link p-0 color">BenQ</a></li>
+                    <li class="nav-item mb-2"><a href="https://cougargaming.com"  target="_blank" class="nav-link p-0 color">Cougar</a></li>
+                    <li class="nav-item mb-2"><a href="https://www.kingston.com/es"  target="_blank" class="nav-link p-0 color">Kingston</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <h5 style="color: white;font-size: 25px;">Contacto: </h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="https://wa.me/51996944981?text=Hola+PC-Info+quiero+estar+en+contacto+con+ustedes"  target="_blank" class="nav-link p-0 color">(01) 999 9999</a></li>
+                    <li class="nav-item mb-2"><a href="https://wa.me/51996944981?text=Hola+PC-Info+quiero+estar+en+contacto+con+ustedes"  target="_blank" class="nav-link p-0 color">Chatea con nosotros</a></li>
+                    <li class="nav-item mb-2"><a href="/html/escribenos.html" class="nav-link p-0 color">Escríbenos</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-4 mb-3">
+                <h5 style="color: white;font-size: 25px;">Libro de reclamaciones</h5>
+                <ul class="nav flex-column">
+                    <!--LIBRO DE RECLAMACIONES-->
+                    <li class="nav-item mb-2"><a href="/html/libro_reclamacion1.html"><i class="fa-sharp fa-solid fa-book-open"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-2 my-2 border-top">
+            <p style="color: white;">&copy; 2022 Company, Velocity Express</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a href="#" style="color:white"><i class="fab fa-facebook-square"></i></a></li>
+                <li class="ms-3"><a href="#" style="color:white;"><i class="fab fa-twitter-square"></i></a></li>
+                <li class="ms-3"><a href="#" style="color:white"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+  </div>
+</div>
+</section>
+
+</body>
+</html>

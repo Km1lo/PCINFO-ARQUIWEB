@@ -61,14 +61,14 @@ export class RecomendacionRegistrarComponent  implements OnInit {
       if (this.edicion) {
         //registrarlo en la base de  datos
         this.RecomendacionService.update(this.recomendacion).subscribe((data) =>
-          this.router.navigate(['recomendacion']).then(() => {
+          this.router.navigate(['/administradores/mostrar']).then(() => {
             window.location.reload();
           })
         );
       } else {
         //registrarlo en la base de  datos
         this.RecomendacionService.insert(this.recomendacion).subscribe((data) =>
-          this.router.navigate(['recomendacion']).then(() => {
+          this.router.navigate(['/administradores/mostrar']).then(() => {
             window.location.reload();
           })
         );

@@ -1,0 +1,262 @@
+:root {
+  --primary: #111B54;
+  --light: #ffffff;
+  --grey: #efefef;
+}
+
+body {
+  overflow: hidden;
+  font-weight: 300;
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.bg-primary { background-color: #201f1f !important; }
+
+.bg-light { background-color: var(--light) !important; }
+
+.bg-grey { background-color: var(--grey) !important; }
+
+.bg-mix { background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0); }
+
+.btn-primary {
+  background-color:#E52D27;
+  border: 0;
+}
+
+.btn-primary:hover {
+  background-color: #E52D27;
+}
+
+#sidebar-container {
+  min-height: 100vh;
+}
+
+#sidebar-container .logo{
+  padding: 0.875rem 1.25rem;
+}
+
+#sidebar-container .menu {
+  width: 18rem;
+}
+
+#content {
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.avatar {
+  max-width: 35px;
+}
+
+.btn-search {
+  right: 0;
+}
+
+.stat {
+  border-right: 1px solid var(--grey);
+}
+
+
+@media (max-width: 768px) {
+  #sidebar-container {
+    display: none;
+  }
+  .stat {
+      border: 0;
+  }
+}
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.porcentaje{
+  display:grid;
+  justify-content: center;
+  align-items: center;
+
+  background: white;
+}
+
+.containerr{
+  position: relative;
+  width: 960px;
+  display: flex;
+  justify-content: space-around;
+}
+.nav-item{
+  color: white;
+}
+.containerr .card{
+  position: relative;
+  width: 250px;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 330px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+  margin-top: 23px;
+}
+.containerr .card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.containerr .card::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50;
+  width: 150%;
+  height:100%;
+  background: white;
+  pointer-events: none;
+  z-index: 1;
+}
+.porcent{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #fff;
+  background: rgb(255,255,255);
+  z-index: 1;
+}
+
+.porcent .number{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border-radius: 50%;
+}
+.porcent .number h2{
+  color: #000;
+  font-weight: 700;
+  font-size: 40px;
+  transition: 0.5s;
+}
+
+.card:hover .porcent .number h2{
+  color: rgb(0,0,0);
+  font-size: 53px;
+}
+.porcent .number h2 span{
+  color: rgb(0,0,0);
+}
+
+.text{
+  position: relative;
+  color: rgb(0,0,0);
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+svg{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(-90deg)!important;
+}
+
+svg circle{
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #e79595a2;
+  stroke-width: 10;
+  stroke-linecap: round !important;
+  transform: translate(5px, 5px);
+}
+
+/*Claculo para simular el porcent*/
+svg circle:nth-child(2){
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+}
+
+
+.card:nth-child(1) svg circle:nth-child(2){
+  stroke-dashoffset: calc(440 - (440 * 80)/100);
+  stroke: rgb(255,0,0);
+}
+.card:nth-child(2) svg circle:nth-child(2){
+  stroke-dashoffset: calc(440 - (440 * 30)/100);
+  stroke: rgb(255,0,0);
+}
+.card:nth-child(3) svg circle:nth-child(2){
+  stroke-dashoffset: calc(440 - (440 * 60)/100);
+  stroke: rgb(255,0,0);
+}
+
+@media only screen and (max-width:600px)
+{
+  .porcentaje{
+      height: auto;
+      margin-left: 30px;
+      flex-flow: row wrap;
+  }
+}
+
+@media screen and(max-width: 1068px){
+  .containerr{
+      max-width: 80rem;
+      min-width: 70rem;
+  }
+
+}
+
+@media screen and (max-width: 868px){
+
+  .containerr{
+      max-width: 80rem;
+  }
+}
+@media screen and (max-width: 768px){
+
+  .containerr{
+      padding: 2.5rem;
+      flex-direction: column;
+      margin-top: 20px;
+  }
+}
+
+
+
+/*HEADER*/
+a.color{
+  color: white;
+}
+
+.color:hover{
+  color: #E52D27;
+}
+
+a.colorbtn{
+  color: white;
+  text-decoration: none;
+}
+
+a.colorbtn:hover{
+  color: #fd9b98;
+}
