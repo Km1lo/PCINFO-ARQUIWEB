@@ -24,7 +24,11 @@ import { ReporteListarComponent } from './component/reporte/reporte-listar/repor
 import { ReporteRegistrarComponent } from './component/reporte/reporte-registrar/reporte-registrar.component';
 import { ReporteDialogoComponent } from './component/reporte/reporte-listar/reporte-dialogo/reporte-dialogo.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { AdministradorComponent } from './component/administrador/administrador.component';
+import { AdministradorListarComponent } from './component/administrador/administrador-listar/administrador-listar.component';
+import { AdministradorRegistrarComponent } from './component/administrador/administrador-registrar/administrador-registrar.component';
+import { AdministradorDialogoComponent } from './component/administrador/administrador-listar/administrador-dialogo/administrador-dialogo.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,11 @@ import { MatSelectModule } from '@angular/material/select';
     ReporteComponent,
     ReporteListarComponent,
     ReporteRegistrarComponent,
-    ReporteDialogoComponent
+    ReporteDialogoComponent,
+    AdministradorComponent,
+    AdministradorListarComponent,
+    AdministradorRegistrarComponent,
+    AdministradorDialogoComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatGridListModule,
     MatButtonModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCheckboxModule
 
   ],
   providers: [],

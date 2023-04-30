@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>Registar Adminitradores</h1>
+    </div>
+  </div>
+  <ng-container>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+        <mat-label>id</mat-label>
+        <input matInput hidden placeholder="id" formControlName="id">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>profesion</mat-label>
+        <input matInput required placeholder="profesion" formControlName="profesion">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>area_trabajo</mat-label>
+        <input matInput required placeholder="area_trabajo" formControlName="area_trabajo">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>horario</mat-label>
+        <input matInput required placeholder="horario" formControlName="horario">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>cumpleanos</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="cumpleanos" formControlName="cumpleanos" max="maxFecha">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <div class="form-check">
+        <mat-checkbox formControlName="estado_vacaciones" class="form-check-input">
+          Vacaciones
+        </mat-checkbox>
+      </div>
+      <br>
+      <div class="form-check">
+        <mat-checkbox formControlName="estado_contrato" class="form-check-input">
+          Contrato
+        </mat-checkbox>
+      </div>
+      <br>
+
+      <button mat-raised-button type="submit" color="primary">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/administradores">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+    </form>
+  </ng-container>
+
+</body>
+</html>
