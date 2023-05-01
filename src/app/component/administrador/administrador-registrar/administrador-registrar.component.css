@@ -5,3 +5,16 @@ mat-form-field{
   display: flex;
   justify-content:center;
 }
+
+.mat-checkbox-checked .mat-checkbox-background {
+  background-color: #FF5252 !important;
+}
+
+.mat-checkbox-checked .mat-checkbox-inner-container {
+  border-color: #FF5252 !important;
+}
+::ng-deep .form-check-input .mat-checkbox-checked .mat-checkbox-background,
+::ng-deep .form-check-input .mat-checkbox-checked .mat-checkbox-inner-container {
+    background-color: #FF5252 !important;
+    border-color: #FF5252 !important;
+}

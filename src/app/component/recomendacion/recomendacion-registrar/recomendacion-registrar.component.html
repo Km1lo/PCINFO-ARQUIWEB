@@ -46,7 +46,8 @@
                         <a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
                     </li>
                     <li>
-                        <button class="btn btn-danger" type="button">Iniciar sesión</button>
+
+                        <button mat-raised-button color="warn">Iniciar sesión</button>
                     </li>
                 </ul>
             </div>
@@ -60,7 +61,8 @@
       <h1>Registar Recomendaciones</h1>
     </div>
   </div>
- <ng-container  >
+ <ng-container>
+  <div class="container" style="text-align: center;">
   <form [formGroup]="form" (submit)="aceptar()">
 
     <mat-form-field class="example-full-width">
@@ -87,11 +89,12 @@
 
 
 
-    <button mat-raised-button type="submit" color="primary">Aceptar</button>
-    <button mat-raised-button color="warn" routerLink="/administradores/mostrar">Cancelar</button>
+    <button mat-raised-button type="submit" color="warn" class="mx-3">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/administradores/mostrar" class="mx-3">Cancelar</button>
     <p>{{mensaje}}</p>
 
   </form>
+</div>
 </ng-container>
 </body>
 </html>
