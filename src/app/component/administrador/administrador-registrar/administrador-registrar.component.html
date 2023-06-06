@@ -8,50 +8,36 @@
 </head>
 <body  style="background-color:rgb(233, 222, 222)">
 
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <header >
+    <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
-            </a>
-
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+          <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">Componentes</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">Formulario</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
+                </li>
+                <li>
+                    <button mat-raised-button color="warn" routerLink="/login">Iniciar sesión</button>
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item px-3">
-                      <button mat-button [matMenuTriggerFor]="menu" style=" color:white">Menu</button>
-                      <mat-menu #menu="matMenu">
-                        <button mat-menu-item routerLink="/usuarios">USUARIOS</button>
-                        <button mat-menu-item routerLink="/clientes">CLIENTES</button>
-                        <button mat-menu-item routerLink="/administradores">ADMINISTRADORES</button>
-                        <button mat-menu-item routerLink="/reportes">REPORTES</button>
-                        <button mat-menu-item routerLink="/componentes">COMPONENTES</button>
-                        <button mat-menu-item routerLink="/comentarios">COMENTARIOS</button>
-                        <button mat-menu-item routerLink="/cuestionarios">CUESTIONARIOS</button>
-                        <button mat-menu-item routerLink="/recomendacion">RECOMENDACIONES</button>
-                      </mat-menu>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" aria-current="page" href="#">Componentes</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" aria-current="page" href="#">Formulario</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
-                    </li>
-                    <li>
-                        <button class="btn btn-danger" type="button">Iniciar sesión</button>
-                    </li>
-                </ul>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
-  </header>
+</header>
 
 
 
@@ -86,7 +72,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>cumpleanos</mat-label>
-        <input matInput [matDatepicker]="picker" placeholder="cumpleanos" formControlName="cumpleanos" max="maxFecha">
+        <input matInput [matDatepicker]="picker" placeholder="cumpleanos" formControlName="cumpleanos" max="maxFecha" required>
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -113,7 +99,7 @@
       <!-- Este es un comentario de una sola línea -->
       <button mat-raised-button type="submit" color="warn" class="mx-5">Aceptar</button>
 
-      <button mat-raised-button color="warn" routerLink="administradores/mostrar" class="mx-0">Cancelar</button>
+      <button mat-raised-button color="warn" routerLink="/administradores/mostrar" class="mx-0">Cancelar</button>
 
       <p>{{mensaje}}</p>
 

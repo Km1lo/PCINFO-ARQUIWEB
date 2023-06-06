@@ -64,7 +64,7 @@ export class ReporteRegistrarComponent implements OnInit{
       this.reporte.estado = this.form.value['estado'];
       if (
         this.form.value['descripcion'].length > 0 &&
-        this.form.value['estado'].length > 0
+        this.form.value['estado'].length > 0 && this.form.value['fecha'] instanceof Date
       ) {
         if (this.edicion) {
           //registrarlo en la base de  datos

@@ -9,5 +9,4 @@ export class Administrador {
   estado_vacaciones: boolean = false
   estado_contrato: boolean = false
 
-
 }

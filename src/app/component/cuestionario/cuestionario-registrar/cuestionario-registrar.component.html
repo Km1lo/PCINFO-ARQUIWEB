@@ -6,53 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <header >
+    <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
-            </a>
-
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+          <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">Componentes</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">Formulario</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
+                </li>
+                <li>
+                    <button mat-raised-button color="warn" routerLink="/login">Iniciar sesión</button>
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item px-3">
-                      <button mat-button [matMenuTriggerFor]="menu" style=" color:white">Menu</button>
-                      <mat-menu #menu="matMenu">
-                        <button mat-menu-item routerLink="/usuarios">USUARIOS</button>
-                        <button mat-menu-item routerLink="/clientes">CLIENTES</button>
-                        <button mat-menu-item routerLink="/administradores">ADMINISTRADORES</button>
-                        <button mat-menu-item routerLink="/reportes">REPORTES</button>
-                        <button mat-menu-item routerLink="/componentes">COMPONENTES</button>
-                        <button mat-menu-item routerLink="/comentarios">COMENTARIOS</button>
-                        <button mat-menu-item routerLink="/cuestionarios">CUESTIONARIOS</button>
-                        <button mat-menu-item routerLink="/recomendacion">RECOMENDACIONES</button>
-                      </mat-menu>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" aria-current="page" href="#">Componentes</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" aria-current="page" href="#">Formulario</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
-                    </li>
-                    <li>
-
-                        <button mat-raised-button color="warn">Iniciar sesión</button>
-                    </li>
-                </ul>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
-  </header>
+</header>
 
   <div class="container-lg" style="margin-top: 50px;">
     <div style="text-align: center;">
@@ -67,49 +51,82 @@
       <input matInput hidden placeholder="Código" formControlName="id">
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Formulario</mat-label>
-      <input matInput required placeholder="Formulario" formControlName="tipo_form">
+      <mat-select placeholder="Formulario" formControlName="tipo_form"required>
+        <mat-option value="Largo">Largo</mat-option>
+        <mat-option value="Corto">Corto</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
-      <mat-label>Uso</mat-label>
-      <input matInput required placeholder="Uso" formControlName="Uso_de_PC">
+    <mat-form-field>
+      <mat-label>Uso de PC</mat-label>
+      <mat-select placeholder="Uso de PC" formControlName="Uso_de_PC"required>
+        <mat-option value="Gaming">Gaming</mat-option>
+        <mat-option value="Streaming">Streaming</mat-option>
+        <mat-option value="Edición">Edición</mat-option>
+        <mat-option value="Estudios">Estudios</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Presupuesto</mat-label>
-      <input matInput required placeholder="Presupuesto" formControlName="Presupuesto">
+      <mat-select placeholder="Presupuesto" formControlName="Presupuesto"required>
+        <mat-option value="Economico">Economico</mat-option>
+        <mat-option value="Media">Media</mat-option>
+        <mat-option value="Media - Alta">Media - Alta</mat-option>
+        <mat-option value="Alta">Alta</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
-      <mat-label>Tamaño</mat-label>
-      <input matInput required placeholder="Tamaño" formControlName="Tamano_del_PC">
+    <mat-form-field>
+      <mat-label>Tamaño del PC</mat-label>
+      <mat-select placeholder="Tamaño del PC" formControlName="Tamano_del_PC"required>
+        <mat-option value="Mini (ITX)">Mini (ITX)</mat-option>
+        <mat-option value="Pequeño (Micro ATX)">Pequeño (Micro ATX)</mat-option>
+        <mat-option value="Estandar (ATX)">Estandar (ATX)</mat-option>
+        <mat-option value="Gigante (EATX)">Gigante (EATX)</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Diseño</mat-label>
-      <input matInput required placeholder="Diseño" formControlName="Diseno">
+      <mat-select placeholder="Diseño" formControlName="Diseno"required>
+        <mat-option value="Normal">Normal</mat-option>
+        <mat-option value="Minimalista">Minimalista</mat-option>
+        <mat-option value="RGB">RGB</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Tipo de refrigeración</mat-label>
-      <input matInput required placeholder="Tipo de refrigeración" formControlName="Tipo_de_refrigeracion">
+      <mat-select placeholder="Tipo de refrigeración" formControlName="Tipo_de_refrigeracion">
+        <mat-option value="Stock">Stock</mat-option>
+        <mat-option value="Aire">Aire</mat-option>
+        <mat-option value="Liquida">Liquida</mat-option>
+        <mat-option value="Liquida Custom">Liquida Custom</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Overclocking</mat-label>
-      <input matInput required placeholder="Overclocking" formControlName="Overclocking">
+      <mat-select placeholder="Overclocking" formControlName="Overclocking">
+        <mat-option value="Si">Si</mat-option>
+        <mat-option value="No">No</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Marca del procesador</mat-label>
-      <input matInput required placeholder="Marca del procesador" formControlName="Marca_Procesador">
+      <mat-select placeholder="Marca del procesador" formControlName="Marca_Procesador"required>
+        <mat-option value="AMD">AMD</mat-option>
+        <mat-option value="Intel">Intel</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field class="example-full-width">
       <mat-label>Programas más usados (opcional)</mat-label>
-      <input matInput required placeholder="Progamas usados" formControlName="Programas_used">
+      <input matInput placeholder="Progamas usados" formControlName="Programas_used"required>
     </mat-form-field>
     <br>
 

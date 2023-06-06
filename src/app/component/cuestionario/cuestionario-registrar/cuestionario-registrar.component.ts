@@ -77,9 +77,15 @@ export class CuestionarioRegistrarComponent implements OnInit {
     this.cuestionario.Marca_Procesador = this.form.value['Marca_Procesador'];
     this.cuestionario.Programas_used = this.form.value['Programas_used'];
 
+
     if (
-      this.form.value['tipo_form'].length > 0 &&
-      this.form.value['Uso_de_PC'].length > 0
+      this.form.value['tipo_form'].length >0 &&
+      this.form.value['Uso_de_PC'].length > 0 &&
+      this.form.value['Presupuesto'].length > 0 &&
+      this.form.value['Tamano_del_PC'].length > 0 &&
+      this.form.value['Diseno'].length > 0 &&
+      this.form.value['Marca_Procesador'].length > 0 &&
+      this.form.value['Programas_used'].length > 0
     ) {
       if (this.edicion) {
         //registrarlo en la base de  datos

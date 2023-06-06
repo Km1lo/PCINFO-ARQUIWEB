@@ -71,7 +71,7 @@ export class AdministradorRegistrarComponent implements OnInit {
     this.administrador.estado_contrato = this.form.value['estado_contrato'];
     if (
       this.form.value['area_trabajo'].length > 0 &&
-      this.form.value['profesion'].length > 0
+      this.form.value['profesion'].length > 0 && this.form.value['horario'].length > 0 && this.form.value['cumpleanos'] instanceof Date
     ) {
       if (this.edicion) {
         //registrarlo en la base de  datos

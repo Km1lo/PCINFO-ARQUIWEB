@@ -27,17 +27,18 @@ export class RecomendacionRegistrarComponent  implements OnInit {
 
   }
   ngOnInit(): void {
-      this.route.params.subscribe((data:Params)=>{
-        this.id=data['id'];
-        this.edicion=data['id']!=null;
-        this.init();
-      });
-      this.form=new FormGroup({
-        id:new FormControl(),
-        valoracion_user:new FormControl(),
-        notas_adicionales:new FormControl()
-      })
-  }
+    this.route.params.subscribe((data:Params)=>{
+      this.id=data['id'];
+      this.edicion=data['id']!=null;
+      console.log('edicion', this.edicion, 'id', this.id)
+      this.init();
+    });
+    this.form=new FormGroup({
+      id:new FormControl(),
+      valoracion_user:new FormControl(),
+      notas_adicionales:new FormControl()
+    })
+}
   init() {
     if (this.edicion) {
       this.RecomendacionService.listId(this.id).subscribe((data) => {
