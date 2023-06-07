@@ -55,6 +55,11 @@
       <input matInput hidden placeholder="Código" formControlName="id">
     </mat-form-field>
     <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion</mat-label>
+      <input matInput required placeholder="Descripcion" formControlName="descripcion">
+    </mat-form-field>
+    <br>
     <mat-form-field appearance="fill">
       <mat-label>Fecha</mat-label>
       <input matInput [matDatepicker]="picker" placeholder="fecha" formControlName="fecha" max="maxFecha" required>
@@ -63,11 +68,7 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <br>
-    <mat-form-field class="example-full-width">
-      <mat-label>Descripcion</mat-label>
-      <input matInput required placeholder="Descripcion" formControlName="descripcion">
-    </mat-form-field>
-    <br>
+
     <mat-form-field>
       <mat-label>Estado</mat-label>
       <mat-select placeholder="Estado" formControlName="estado"required>
