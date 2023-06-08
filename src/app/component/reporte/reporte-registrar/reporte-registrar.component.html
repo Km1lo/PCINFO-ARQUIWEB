@@ -51,7 +51,7 @@
   <div class="container" style="text-align: center;">
   <form [formGroup]="form" (submit)="aceptar()">
     <mat-form-field class="example-full-width">
-      <mat-label>Código</mat-label>
+      <mat-label>id</mat-label>
       <input matInput hidden placeholder="Código" formControlName="id">
     </mat-form-field>
     <br>
@@ -61,7 +61,7 @@
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill">
-      <mat-label>Fecha</mat-label>
+      <mat-label>fecha</mat-label>
       <input matInput [matDatepicker]="picker" placeholder="fecha" formControlName="fecha" max="maxFecha" required>
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -70,7 +70,7 @@
     <br>
 
     <mat-form-field>
-      <mat-label>Estado</mat-label>
+      <mat-label>estado</mat-label>
       <mat-select placeholder="Estado" formControlName="estado"required>
         <mat-option value="En proceso">En Proceso</mat-option>
         <mat-option value="Finalizado">Finalizado</mat-option>
