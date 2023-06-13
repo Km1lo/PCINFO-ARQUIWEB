@@ -59,22 +59,23 @@ export class RecomendacionRegistrarComponent  implements OnInit {
     if (
       this.form.value['notas_adicionales'].length > 0
     ) {
-      if (this.edicion) {
-        //registrarlo en la base de  datos
+      if(this.edicion){
         this.RecomendacionService.update(this.recomendacion).subscribe((data) =>
-          this.router.navigate(['/administradores/mostrar']).then(() => {
-            window.location.reload();
+          this.RecomendacionService.list().subscribe(data=>{
+            this.RecomendacionService.setList(data);
           })
         );
-      } else {
+      }else {
         //registrarlo en la base de  datos
         this.RecomendacionService.insert(this.recomendacion).subscribe((data) =>
-          this.router.navigate(['/administradores/mostrar']).then(() => {
-            window.location.reload();
-          })
+        this.RecomendacionService.list().subscribe(data=>{
+          this.RecomendacionService.setList(data);
+        })
         );
       }
-    } else {
+      this.router.navigate(['administradores/mostrar/recomendacion']);
+    }
+     else {
       this.mensaje = 'Ingrese la descripcion o estado';
     }
   }

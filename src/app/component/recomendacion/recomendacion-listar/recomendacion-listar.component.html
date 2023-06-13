@@ -18,7 +18,7 @@
       <div style="text-align: right;">
 
 
-        <button mat-raised-button color="warn" routerLink="/recomendacion/registrar" >Nuevo</button>
+        <button mat-raised-button color="warn" routerLink="/administradores/mostrar/recomendacion/registrar" >Nuevo</button>
 
 
       </div>
@@ -121,7 +121,7 @@
           <th mat-header-cell *matHeaderCellDef> Acciones </th>
           <td mat-cell *matCellDef="let element">
           <button mat-raised-button color="warn"
-              [routerLink]="['/recomendacion/editar',element.id]"><i class="fa-solid fa-rotate" style="color: #ffffff;"></i></button>
+              [routerLink]="['/administradores/mostrar/recomendacion/editar',element.id]"><i class="fa-solid fa-rotate" style="color: #ffffff;"></i></button>
           </td>
         </ng-container>
 

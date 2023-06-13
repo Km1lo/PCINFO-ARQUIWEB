@@ -13,6 +13,8 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./recomendacion-listar.component.css']
 })
 export class RecomendacionListarComponent  implements OnInit {
+  lista: Recomendacion[]=[]
+
   dataSource:MatTableDataSource<Recomendacion>=new MatTableDataSource();
   idMayor: number = 0;
 
@@ -25,6 +27,12 @@ export class RecomendacionListarComponent  implements OnInit {
       this.as.list().subscribe(data=>{
         this.dataSource=new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator
+
+      })
+      this.as.getList().subscribe(data=>{
+
+        this.dataSource=new MatTableDataSource(data);
+        this.dataSource.paginator = this.paginator; // Asignar paginator de nuevo // RECONTRA IMPORTANTE
 
       })
       this.as.getConfirmDelete().subscribe(data => {
