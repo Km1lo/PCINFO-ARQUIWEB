@@ -1,12 +1,12 @@
 export class Cuestionario{
   id: number=0
   tipo_form: string=""
-  Uso_de_PC: string=""
-  Presupuesto: string=""
-  Tamano_del_PC: string=""
-  Diseno: string=""
-  Tipo_de_refrigeracion: string=""
-  Overclocking: boolean=false
-  Marca_Procesador: string=""
-  Programas_used: string=""
+  uso_de_pc: string=""
+  presupuesto: string=""
+  tamano_del_pc: string=""
+  diseno: string=""
+  tipo_de_refrigeracion: string=""
+  overclocking: string=""
+  marca_procesador: string=""
+  programas_used: string=""
 }

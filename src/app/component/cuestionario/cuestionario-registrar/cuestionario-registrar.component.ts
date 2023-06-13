@@ -35,14 +35,14 @@ export class CuestionarioRegistrarComponent implements OnInit {
     this.form = new FormGroup({
       id: new FormControl(),
       tipo_form: new FormControl(),
-      Uso_de_PC: new FormControl(),
-      Presupuesto: new FormControl(),
-      Tamano_del_PC:new FormControl(),
-      Diseno:new FormControl(),
-      Tipo_de_refrigeracion:new FormControl(),
-      Overclocking:new FormControl(),
-      Marca_Procesador:new FormControl(),
-      Programas_used:new FormControl()
+      uso_de_pc: new FormControl(),
+      presupuesto: new FormControl(),
+      tamano_del_pc:new FormControl(),
+      diseno:new FormControl(),
+      tipo_de_refrigeracion:new FormControl(),
+      overclocking:new FormControl(),
+      marca_procesador:new FormControl(),
+      programas_used:new FormControl()
   })
 }
 
@@ -52,14 +52,14 @@ export class CuestionarioRegistrarComponent implements OnInit {
         this.form = new FormGroup({
           id: new FormControl(data.id),
           tipo_form: new FormControl(data.tipo_form),
-          Uso_de_PC: new FormControl(data.Uso_de_PC),
-          Presupuesto: new FormControl(data.Presupuesto),
-          Tamano_del_PC:new FormControl(data.Tamano_del_PC),
-          Diseno:new FormControl(data.Diseno),
-          Tipo_de_refrigeracion:new FormControl(data.Tipo_de_refrigeracion),
-          Overclocking:new FormControl(data.Overclocking),
-          Marca_Procesador:new FormControl(data.Marca_Procesador),
-          Programas_used:new FormControl(data.Programas_used)
+          uso_de_pc: new FormControl(data.uso_de_pc),
+          presupuesto: new FormControl(data.presupuesto),
+          tamano_del_pc:new FormControl(data.tamano_del_pc),
+          diseno:new FormControl(data.diseno),
+          tipo_de_refrigeracion:new FormControl(data.tipo_de_refrigeracion),
+          overclocking:new FormControl(data.overclocking),
+          marca_procesador:new FormControl(data.marca_procesador),
+          programas_used:new FormControl(data.programas_used)
         });
       });
     }
@@ -68,24 +68,24 @@ export class CuestionarioRegistrarComponent implements OnInit {
   aceptar(): void {
     this.cuestionario.id = this.form.value['id'];
     this.cuestionario.tipo_form = this.form.value['tipo_form'];
-    this.cuestionario.Uso_de_PC = this.form.value['Uso_de_PC'];
-    this.cuestionario.Presupuesto = this.form.value['Presupuesto'];
-    this.cuestionario.Tamano_del_PC = this.form.value['Tamano_del_PC'];
-    this.cuestionario.Diseno = this.form.value['Diseno'];
-    this.cuestionario.Tipo_de_refrigeracion = this.form.value['Tipo_de_refrigeracion'];
-    this.cuestionario.Overclocking = this.form.value['Overclocking'];
-    this.cuestionario.Marca_Procesador = this.form.value['Marca_Procesador'];
-    this.cuestionario.Programas_used = this.form.value['Programas_used'];
+    this.cuestionario.uso_de_pc = this.form.value['uso_de_pc'];
+    this.cuestionario.presupuesto = this.form.value['presupuesto'];
+    this.cuestionario.tamano_del_pc = this.form.value['tamano_del_pc'];
+    this.cuestionario.diseno = this.form.value['diseno'];
+    this.cuestionario.tipo_de_refrigeracion = this.form.value['tipo_de_refrigeracion'];
+    this.cuestionario.overclocking = this.form.value['overclocking'];
+    this.cuestionario.marca_procesador = this.form.value['marca_procesador'];
+    this.cuestionario.programas_used = this.form.value['programas_used'];
 
 
     if (
       this.form.value['tipo_form'].length >0 &&
-      this.form.value['Uso_de_PC'].length > 0 &&
-      this.form.value['Presupuesto'].length > 0 &&
-      this.form.value['Tamano_del_PC'].length > 0 &&
-      this.form.value['Diseno'].length > 0 &&
-      this.form.value['Marca_Procesador'].length > 0 &&
-      this.form.value['Programas_used'].length > 0
+      this.form.value['uso_de_pc'].length > 0 &&
+      this.form.value['presupuesto'].length > 0 &&
+      this.form.value['tamano_del_pc'].length > 0 &&
+      this.form.value['diseno'].length > 0 &&
+      this.form.value['marca_procesador'].length > 0 &&
+      this.form.value['programas_used'].length > 0
     ) {
       if (this.edicion) {
         //registrarlo en la base de  datos
