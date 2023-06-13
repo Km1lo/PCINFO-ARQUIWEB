@@ -23,8 +23,8 @@ export class AdministradorService {
     return this.http.get<Administrador>(`${this.url}/${id}`);
   }
   update(admin: Administrador){
-    return this.http.put(this.url+"/"+admin.id, admin);
-  }
+    return this.http.put(this.url, admin);
+   }
   insert(administrador : Administrador){
     return this.http.post(this.url, administrador);
   }
@@ -40,5 +40,9 @@ export class AdministradorService {
   setList(listaNueva: Administrador[]) {
   this.listaCambio.next(listaNueva);
   }
+  getList()
+{
+  return this.listaCambio.asObservable();
+}
 }
 

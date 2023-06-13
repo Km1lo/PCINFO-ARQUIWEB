@@ -22,7 +22,7 @@ export class RecomendacionService {
     return this.http.get<Recomendacion>(`${this.url}/${id}`);
   }
   update(rep: Recomendacion){
-    return this.http.put(this.url+"/"+rep.id, rep);
+    return this.http.put(this.url, rep);
   }
   insert(recomendacion : Recomendacion){
     return this.http.post(this.url,recomendacion);
@@ -39,5 +39,8 @@ delete(id: number) {
 setList(listaNueva: Recomendacion[]) {
   this.listaCambio.next(listaNueva);
 }
-
+getList()
+{
+  return this.listaCambio.asObservable();
+}
 }

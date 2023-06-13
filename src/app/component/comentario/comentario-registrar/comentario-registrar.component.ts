@@ -56,20 +56,24 @@ export class ComentarioRegistrarComponent implements OnInit {
     this.comentarioo.comentario = this.form.value['comentario'];
     this.comentarioo.fecha = this.form.value['fecha'];
 
-    if(this.form.value['comentario'].length > 0 && this.form.value['fecha'] instanceof Date){
+
+    if(this.form.value['comentario'].length > 0 /*&& this.form.value['fecha'] instanceof Date*/){
+
       if(this.edicion){
         this.ComentarioService.update(this.comentarioo).subscribe((data) =>
-          this.router.navigate(['administradores/mostrar']).then(() => {
-            window.location.reload();
+          this.ComentarioService.list().subscribe(data=>{
+            this.ComentarioService.setList(data);
           })
+
         );
       } else {
         this.ComentarioService.insert(this.comentarioo).subscribe((data) =>
-          this.router.navigate(['administradores/mostrar']).then(() => {
-            window.location.reload();
+          this.ComentarioService.list().subscribe(data=>{
+            this.ComentarioService.setList(data);
           })
         );
       }
+      this.router.navigate(['administradores/mostrar/comentarios']);
     }
     else {
       this.mensaje = "Llene todos los campos";

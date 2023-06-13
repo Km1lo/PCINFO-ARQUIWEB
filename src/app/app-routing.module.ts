@@ -13,29 +13,16 @@ import { CuestionarioRegistrarComponent } from './component/cuestionario/cuestio
 import { LoginComponent } from './component/login/login.component';
 import { LoginMostrarComponent } from './component/login/login-mostrar/login-mostrar.component';
 import { AdministradorIndexComponent } from './component/administrador/administrador-index/administrador-index.component';
+import { ComentarioListarComponent } from './component/comentario/comentario-listar/comentario-listar.component';
+import { RecomendacionListarComponent } from './component/recomendacion/recomendacion-listar/recomendacion-listar.component';
+import { ReporteListarComponent } from './component/reporte/reporte-listar/reporte-listar.component';
+import { AdministradorListarComponent } from './component/administrador/administrador-listar/administrador-listar.component';
+import { CuestionarioListarComponent } from './component/cuestionario/cuestionario-listar/cuestionario-listar.component';
 
 const routes: Routes = [
   {
-    path: 'comentarios', component: ComentarioComponent, children: [
-      {
-        path: 'registrar', component: ComentarioRegistrarComponent
-      },
-      {
-        path: 'editar/:id', component: ComentarioRegistrarComponent
-      }
-    ]
-  },
-  {
-    path: 'reportes', component: ReporteComponent, children: [
-      {
-        path: 'registrar', component: ReporteRegistrarComponent
-      },
-      {
-        path: 'editar/:id', component: ReporteRegistrarComponent
-      }
-    ]
-  },
-  {
+
+
     path: 'administradores', component: AdministradorComponent, children: [
       {
         path: 'registrar', component: AdministradorRegistrarComponent
@@ -44,31 +31,73 @@ const routes: Routes = [
         path: 'editar/:id', component: AdministradorRegistrarComponent
       },
       {
-        path: 'mostrar', component: AdministradorIndexComponent
+        path: 'mostrar', component: AdministradorIndexComponent, children:[
+          {
+            path: 'comentarios', component: ComentarioComponent, children: [
+              {
+              path:'coment', component:ComentarioListarComponent
+              },
+                {
+                  path: 'registrar', component: ComentarioRegistrarComponent
+                },
+                {
+                  path: 'editar/:id', component: ComentarioRegistrarComponent
+                }
+            ]
+           }
+           //Siguiente
+           ,
+           {
+             path: 'recomendacion', component: RecomendacionComponent, children: [
+               {
+                 path: 'registrar', component: RecomendacionRegistrarComponent
+               },
+               {
+                 path: 'editar/:id', component: RecomendacionRegistrarComponent
+               },
+               {
+                 path:'listar', component:RecomendacionListarComponent
+
+               }
+             ]
+           }
+           //siguiente
+           ,
+           {
+             path: 'cuestionarios',component: CuestionarioComponent, children:[
+               {
+                 path: 'registrar', component: CuestionarioRegistrarComponent
+               },
+               {
+                 path: 'editar/:id', component: CuestionarioRegistrarComponent
+               },
+               {
+                path:'listar', component: CuestionarioListarComponent
+               }
+             ]
+           },
+           {
+            path: 'reportes', component: ReporteComponent, children: [
+              {
+                path: 'registrar', component: ReporteRegistrarComponent
+              },
+              {
+                path: 'editar/:id', component: ReporteRegistrarComponent
+              },
+              {
+                path: 'listar', component: ReporteListarComponent
+              }
+            ]
+          },
+          {
+            path:'listar', component:AdministradorListarComponent
+          }
+        ]
 
       }
     ]
   },
   {
-    path: 'recomendacion', component: RecomendacionComponent, children: [
-      {
-        path: 'registrar', component: RecomendacionRegistrarComponent
-      },
-      {
-        path: 'editar/:id', component: RecomendacionRegistrarComponent
-      }
-    ]
-  },
-  {
-    path: 'cuestionarios',component: CuestionarioComponent, children:[
-      {
-        path: 'registrar', component: CuestionarioRegistrarComponent
-      },
-      {
-        path: 'editar/:id', component: CuestionarioRegistrarComponent
-      }
-    ]
-  },{
     path: 'login', component: LoginComponent, children: [
       {
         path: 'registrar', component: AdministradorRegistrarComponent

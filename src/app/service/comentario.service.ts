@@ -23,7 +23,8 @@ export class ComentarioService {
     return this.http.get<Comentario>(`${this.url}/${id}`);
   }
   update(com: Comentario){
-    return this.http.put(this.url+"/"+com.id, com);
+    //return this.http.put(this.url+"/"+com.id, com);
+    return this.http.put(this.url, com);
   }
   insert(comentario : Comentario){
     return this.http.post(this.url, comentario);
@@ -39,5 +40,9 @@ delete(id: number) {
 }
 setList(listaNueva: Comentario[]) {
   this.listaCambio.next(listaNueva);
+}
+getList()
+{
+  return this.listaCambio.asObservable();
 }
 }

@@ -17,6 +17,7 @@ import { ViewChild } from '@angular/core';
 })
 export class ComentarioListarComponent implements OnInit {
 
+  lista: Comentario[]=[]
 
   dataSource:MatTableDataSource<Comentario> = new MatTableDataSource();
   idMayor: number = 0;
@@ -29,6 +30,12 @@ export class ComentarioListarComponent implements OnInit {
     this.cS.list().subscribe(data=>{
       this.dataSource= new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
+    })
+    this.cS.getList().subscribe(data=>{
+
+      this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator; // Asignar paginator de nuevo // RECONTRA IMPORTANTE
+
     })
     this.cS.getConfirmDelete().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;

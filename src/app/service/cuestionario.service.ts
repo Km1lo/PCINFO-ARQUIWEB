@@ -21,7 +21,7 @@ export class CuestionarioService {
     return this.http.get<Cuestionario>(`${this.url}/${id}`);
   }
   update(rep: Cuestionario){
-    return this.http.put(this.url+"/"+rep.id, rep);
+    return this.http.put(this.url, rep);
   }
   insert(cuestionario : Cuestionario){
     return this.http.post(this.url, cuestionario);
@@ -37,5 +37,9 @@ delete(id: number) {
 }
 setList(listaNueva: Cuestionario[]) {
   this.listaCambio.next(listaNueva);
+}
+getList()
+{
+  return this.listaCambio.asObservable();
 }
 }

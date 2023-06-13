@@ -21,7 +21,7 @@ export class ReporteService {
     return this.http.get<Reporte>(`${this.url}/${id}`);
   }
   update(rep: Reporte){
-    return this.http.put(this.url+"/"+rep.id, rep);
+    return this.http.put(this.url, rep);
   }
   insert(reporte : Reporte){
     return this.http.post(this.url, reporte);
@@ -37,5 +37,9 @@ delete(id: number) {
 }
 setList(listaNueva: Reporte[]) {
   this.listaCambio.next(listaNueva);
+}
+getList()
+{
+  return this.listaCambio.asObservable();
 }
 }
