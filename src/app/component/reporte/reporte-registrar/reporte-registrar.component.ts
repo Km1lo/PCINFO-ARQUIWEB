@@ -69,18 +69,20 @@ export class ReporteRegistrarComponent implements OnInit{
         if (this.edicion) {
           //registrarlo en la base de  datos
           this.ReporteService.update(this.reporte).subscribe((data) =>
-            this.router.navigate(['administradores/mostrar']).then(() => {
-              window.location.reload();
-            })
+          this.ReporteService.list().subscribe(data=>{
+            this.ReporteService.setList(data);
+          })
           );
         } else {
           //registrarlo en la base de  datos
           this.ReporteService.insert(this.reporte).subscribe((data) =>
-            this.router.navigate(['administradores/mostrar']).then(() => {
-              window.location.reload();
-            })
+          this.ReporteService.list().subscribe(data=>{
+            this.ReporteService.setList(data);
+          })
           );
         }
+        this.router.navigate(['administradores/mostrar/reportes']);
+
       } else {
         this.mensaje = 'Ingrese la descripcion o estado';
       }

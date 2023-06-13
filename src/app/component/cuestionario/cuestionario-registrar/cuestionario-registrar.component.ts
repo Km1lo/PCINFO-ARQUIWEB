@@ -90,18 +90,20 @@ export class CuestionarioRegistrarComponent implements OnInit {
       if (this.edicion) {
         //registrarlo en la base de  datos
         this.CuestionarioService.update(this.cuestionario).subscribe((data) =>
-          this.router.navigate(['administradores/mostrar']).then(() => {
-            window.location.reload();
-          })
+        this.CuestionarioService.list().subscribe(data=>{
+          this.CuestionarioService.setList(data);
+        })
         );
       } else {
         //registrarlo en la base de  datos
         this.CuestionarioService.insert(this.cuestionario).subscribe((data) =>
-          this.router.navigate(['administradores/mostrar']).then(() => {
-            window.location.reload();
-          })
+        this.CuestionarioService.list().subscribe(data=>{
+          this.CuestionarioService.setList(data);
+        })
         );
       }
+      this.router.navigate(['administradores/mostrar/cuestionarios/listar']);
+
     } else {
       this.mensaje = 'Ingrese la descripcion o estado';
     }

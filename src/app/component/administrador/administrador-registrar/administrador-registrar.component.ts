@@ -71,23 +71,25 @@ export class AdministradorRegistrarComponent implements OnInit {
     this.administrador.estado_contrato = this.form.value['estado_contrato'];
     if (
       this.form.value['area_trabajo'].length > 0 &&
-      this.form.value['profesion'].length > 0 && this.form.value['horario'].length > 0 && this.form.value['cumpleanos'] instanceof Date
+      this.form.value['profesion'].length > 0 && this.form.value['horario'].length > 0
     ) {
       if (this.edicion) {
         //registrarlo en la base de  datos
         this.AdministradorService.update(this.administrador).subscribe((data) =>
-          this.router.navigate(['administradores/mostrar']).then(() => {
-            window.location.reload();
-          })
+        this.AdministradorService.list().subscribe(data=>{
+          this.AdministradorService.setList(data);
+        })
         );
       } else {
         //registrarlo en la base de  datos
         this.AdministradorService.insert(this.administrador).subscribe((data) =>
-          this.router.navigate(['administradores/mostrar']).then(() => {
-            window.location.reload();
-          })
+        this.AdministradorService.list().subscribe(data=>{
+          this.AdministradorService.setList(data);
+        })
         );
       }
+      this.router.navigate(['administradores/mostrar/listar']);
+
     } else {
       this.mensaje = 'Ingrese el area de trabajo o profesion';
     }

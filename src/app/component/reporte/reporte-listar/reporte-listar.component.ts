@@ -28,6 +28,12 @@ ngOnInit(): void {
     this.dataSource= new MatTableDataSource(data);
     this.dataSource.paginator = this.paginator
   })
+  this.aS.getList().subscribe(data=>{
+
+    this.dataSource=new MatTableDataSource(data);
+    this.dataSource.paginator = this.paginator; // Asignar paginator de nuevo // RECONTRA IMPORTANTE
+
+  })
   this.aS.getConfirmDelete().subscribe(data => {
     data == true ? this.eliminar(this.idMayor) : false;
   })

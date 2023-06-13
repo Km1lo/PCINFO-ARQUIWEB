@@ -24,12 +24,7 @@ const routes: Routes = [
 
 
     path: 'administradores', component: AdministradorComponent, children: [
-      {
-        path: 'registrar', component: AdministradorRegistrarComponent
-      },
-      {
-        path: 'editar/:id', component: AdministradorRegistrarComponent
-      },
+
       {
         path: 'mostrar', component: AdministradorIndexComponent, children:[
           {
@@ -91,7 +86,12 @@ const routes: Routes = [
           },
           {
             path:'listar', component:AdministradorListarComponent
-          }
+          }, {
+            path: 'registrar', component: AdministradorRegistrarComponent
+          },
+          {
+            path: 'editar/:id', component: AdministradorRegistrarComponent
+          },
         ]
 
       }
