@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ReporteDialogoComponent } from './reporte-dialogo/reporte-dialogo.component';
 import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { Administrador } from 'src/app/model/administrador';
 
 
 
@@ -15,10 +16,11 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./reporte-listar.component.css']
 })
 export class ReporteListarComponent implements OnInit {
+  lista: Reporte[] = [];
 
 dataSource:MatTableDataSource<Reporte> = new MatTableDataSource();
 idMayor: number = 0;
-displayedColumns: string[] = ['id_reporte', 'descripcion', 'fecha', 'estado','accion01','accion2']
+displayedColumns: string[] = ['id_reporte', 'descripcion', 'fecha', 'estado','administrador','accion01','accion2']
 @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
 
