@@ -42,6 +42,10 @@ import { IndexMostrarComponent } from './component/indexa/index-mostrar/index-mo
 import { LoginComponent } from './component/login/login.component';
 import { LoginMostrarComponent } from './component/login/login-mostrar/login-mostrar.component';
 import { AdministradorIndexComponent } from './component/administrador/administrador-index/administrador-index.component';
+import { UsuarioComponent } from './component/usuario/usuario.component';
+import { UsuarioListarComponent } from './component/usuario/usuario-listar/usuario-listar.component';
+import { UsuarioRegistrarComponent } from './component/usuario/usuario-registrar/usuario-registrar.component';
+import { UsuarioDialogoComponent } from './component/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +73,11 @@ import { AdministradorIndexComponent } from './component/administrador/administr
     IndexMostrarComponent,
     LoginComponent,
     LoginMostrarComponent,
-    AdministradorIndexComponent
+    AdministradorIndexComponent,
+    UsuarioComponent,
+    UsuarioListarComponent,
+    UsuarioRegistrarComponent,
+    UsuarioDialogoComponent
   ],
   imports: [
     BrowserModule,
