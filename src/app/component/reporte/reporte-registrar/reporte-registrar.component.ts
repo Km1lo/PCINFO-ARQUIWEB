@@ -55,7 +55,8 @@ export class ReporteRegistrarComponent implements OnInit{
             id: new FormControl(data.id),
             fecha: new FormControl(data.fecha),
             descripcion: new FormControl(data.descripcion),
-            estado:new FormControl(data.estado)
+            estado:new FormControl(data.estado),
+            administrador :new FormControl(data.administrador)
           });
         });
       }
@@ -76,7 +77,9 @@ export class ReporteRegistrarComponent implements OnInit{
         this.ReporteService.list().subscribe(data => {
               this.ReporteService.setList(data);
             })
+
           })
+          this.router.navigate(['administradores/mostrar/recomendacion']);
     }
       if (
         this.form.value['descripcion'].length > 0 &&
@@ -98,7 +101,7 @@ export class ReporteRegistrarComponent implements OnInit{
           );
         }
 
-
+        this.router.navigate(['administradores/mostrar/reporte']);
 
       } else {
         this.mensaje = 'Ingrese la descripcion o estado';
