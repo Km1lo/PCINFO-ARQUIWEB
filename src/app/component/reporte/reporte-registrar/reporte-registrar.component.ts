@@ -79,7 +79,7 @@ export class ReporteRegistrarComponent implements OnInit{
             })
 
           })
-          this.router.navigate(['administradores/mostrar/recomendacion']);
+          this.router.navigate(['administradores/mostrar/reporte']);
     }
       if (
         this.form.value['descripcion'].length > 0 &&

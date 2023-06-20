@@ -34,6 +34,7 @@
         <input matInput required placeholder="comentario" formControlName="comentario">
       </mat-form-field>
       <br>
+
       <mat-form-field appearance="fill">
         <mat-label>Fecha</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="fecha" max="maxFecha" required>
@@ -42,6 +43,20 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <br>
+
+
+      <!--ERROR AQUI-->
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <mat-select formControlName="idUsuario" [(value)]="idUsuarioSeleccionado" required>
+          <mat-option *ngFor="let a of listaUsuario" [value]="a.id">
+            {{a.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
 
       <button mat-raised-button type="submit" color="warn" class="mx-3">Aceptar</button>
       <button mat-raised-button color="warn" routerLink="/administradores/mostrar/comentarios/coment" class="mx-3">Cancelar</button>

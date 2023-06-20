@@ -5,6 +5,8 @@ import * as moment from 'moment';
 import { ComentarioService } from 'src/app/service/comentario.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
+import { UsuarioService } from 'src/app/service/usuario.service';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-comentario-registrar',
@@ -18,13 +20,24 @@ export class ComentarioRegistrarComponent implements OnInit {
   maxFecha: Date = moment().add(1, 'days').toDate();
   id: number = 0;
   edicion: boolean = false; //no es edicion
+
+//PARA FK
+  listaUsuario: Usuario[] = [];
+  idUsuarioSeleccionado: number = 0;
+  //
+
   constructor(
     private ComentarioService: ComentarioService,
     private router: Router,
-    private route: ActivatedRoute)
+    private route: ActivatedRoute, private uS: UsuarioService)
   {}
 
   ngOnInit(): void {
+
+    this.uS.list().subscribe(data => { this.listaUsuario = data; });
+
+
+
     this.route.params.subscribe((data: Params) => {
       this.id = data['id']; //capturando el id del listado
       this.edicion = data['id'] != null;
@@ -34,7 +47,8 @@ export class ComentarioRegistrarComponent implements OnInit {
     this.form = new FormGroup({
       id: new FormControl(),
       comentario: new FormControl(),
-      fecha: new FormControl()
+      fecha: new FormControl(),
+      idUsuario: new FormControl()
 
     })
   }
@@ -45,39 +59,51 @@ export class ComentarioRegistrarComponent implements OnInit {
         this.form = new FormGroup({
           id: new FormControl(data.id),
           comentario: new FormControl(data.comentario),
-          fecha: new FormControl(data.fecha)
+          fecha: new FormControl(data.fecha),
+          idUsuario: new FormControl(data.idUsuario)
         });
       });
     }
   }
 
-  aceptar(): void {
-    this.comentarioo.id = this.form.value['id'];
-    this.comentarioo.comentario = this.form.value['comentario'];
-    this.comentarioo.fecha = this.form.value['fecha'];
 
 
-    if(this.form.value['comentario'].length > 0 /*&& this.form.value['fecha'] instanceof Date*/){
+//ERROR AQUI (NO AGARRA EL ID DE LA OTRA TABLA (USUARIO))
 
-      if(this.edicion){
-        this.ComentarioService.update(this.comentarioo).subscribe((data) =>
-          this.ComentarioService.list().subscribe(data=>{
-            this.ComentarioService.setList(data);
-          })
+aceptar(): void {
+  this.comentarioo.id = this.form.value['id'];
+  this.comentarioo.comentario = this.form.value['comentario'];
+  this.comentarioo.fecha = this.form.value['fecha'];
+  this.comentarioo.idUsuario.nombre = this.form.value['idUsuario.nombre'];
 
-        );
-      } else {
-        this.ComentarioService.insert(this.comentarioo).subscribe((data) =>
-          this.ComentarioService.list().subscribe(data=>{
-            this.ComentarioService.setList(data);
-          })
-        );
-      }
-      this.router.navigate(['administradores/mostrar/comentarios']);
+
+
+
+
+  if(this.form.value['comentario'].length > 0 /*&& this.form.value['fecha'] instanceof Date*/){
+
+    if(this.edicion){
+      this.ComentarioService.update(this.comentarioo).subscribe((data) =>
+        this.ComentarioService.list().subscribe(data=>{
+          this.ComentarioService.setList(data);
+        })
+
+      );
+    } else if (this.idUsuarioSeleccionado>0){
+      let a = new Usuario();
+      a.id = this.idUsuarioSeleccionado;
+      this.comentarioo.idUsuario=a;
+      this.ComentarioService.insert(this.comentarioo).subscribe((data) =>
+        this.ComentarioService.list().subscribe(data=>{
+          this.ComentarioService.setList(data);
+        })
+      );
     }
-    else {
-      this.mensaje = "Llene todos los campos";
-    }
+    this.router.navigate(['administradores/mostrar/comentarios']);
   }
+  else {
+    this.mensaje = "Llene todos los campos";
+  }
+}
 
 }
