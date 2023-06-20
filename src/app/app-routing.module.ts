@@ -18,6 +18,9 @@ import { RecomendacionListarComponent } from './component/recomendacion/recomend
 import { ReporteListarComponent } from './component/reporte/reporte-listar/reporte-listar.component';
 import { AdministradorListarComponent } from './component/administrador/administrador-listar/administrador-listar.component';
 import { CuestionarioListarComponent } from './component/cuestionario/cuestionario-listar/cuestionario-listar.component';
+import { UsuarioComponent } from './component/usuario/usuario.component';
+import { UsuarioRegistrarComponent } from './component/usuario/usuario-registrar/usuario-registrar.component';
+import { UsuarioListarComponent } from './component/usuario/usuario-listar/usuario-listar.component';
 
 const routes: Routes = [
   {
@@ -52,6 +55,22 @@ const routes: Routes = [
                },
                {
                  path:'listar', component:RecomendacionListarComponent
+
+               }
+             ]
+           }
+           //siguiente
+           ,
+           {
+             path: 'usuario', component: UsuarioComponent, children: [
+               {
+                 path: 'registrar', component: UsuarioRegistrarComponent
+               },
+               {
+                 path: 'editar/:id', component: UsuarioRegistrarComponent
+               },
+               {
+                 path:'listar', component: UsuarioListarComponent
 
                }
              ]
