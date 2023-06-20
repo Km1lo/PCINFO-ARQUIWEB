@@ -1,1 +1,93 @@
-<p>usuario-registrar works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body  style="background-color:rgb(233, 222, 222)">
+
+
+
+
+
+
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>Registar Usuarios</h1>
+    </div>
+  </div>
+ <ng-container>
+  <div class="container" style="text-align: center;">
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput hidden placeholder="id" formControlName="id">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>dni</mat-label>
+        <input matInput required placeholder="dni" formControlName="dni">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput required placeholder="nombre" formControlName="nombre">
+      </mat-form-field>
+      <br>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido Paterno</mat-label>
+        <input matInput required placeholder="apellidop" formControlName="apellidop">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido Materno</mat-label>
+        <input matInput required placeholder="apellidom" formControlName="apellidom">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Correo</mat-label>
+        <input matInput required placeholder="correo" formControlName="correo">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Sexo</mat-label>
+        <input matInput required placeholder="sexo" formControlName="sexo">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Edad</mat-label>
+        <input matInput required placeholder="edad" formControlName="edad">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput required placeholder="contrasenia" formControlName="contrasenia">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Pais</mat-label>
+        <input matInput required placeholder="pais" formControlName="pais">
+      </mat-form-field>
+      <br>
+
+      <button mat-raised-button type="submit" color="warn" class="mx-3">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/administradores/mostrar/usuario/listar" class="mx-3">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+    </form>
+  </div>
+</ng-container>
+</body>
+</html>

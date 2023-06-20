@@ -49,6 +49,8 @@
                   COMENTARIO</a>
             <a routerLink="/administradores/mostrar/cuestionarios/listar" data-valor="5" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
                     CUESTIONARIO</a>
+            <a routerLink="/administradores/mostrar/usuario/listar" data-valor="6" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+                    USUARIO</a>
             <a routerLink="/login" data-valor="5" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
                       CERRAR SESION</a>
 
@@ -112,6 +114,15 @@
 
               <div [hidden]="route.children.length!==0">
                 <app-cuestionario-listar></app-cuestionario-listar>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="6">
+            <div id="content5" class="bg-grey w-100">
+              <router-outlet></router-outlet>
+
+              <div [hidden]="route.children.length!==0">
+                <app-usuario-listar></app-usuario-listar>
               </div>
             </div>
           </ng-container>
