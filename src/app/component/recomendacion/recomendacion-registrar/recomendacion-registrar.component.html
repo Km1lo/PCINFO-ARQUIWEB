@@ -43,9 +43,10 @@
     <br>
 
     <mat-form-field appearance="fill">
-      <mat-label>Usuario</mat-label>
-      <mat-select formControlName="usuario" [(value)]="idCuestionarioSeleccionado" required>
-        <mat-option *ngFor="let a of lista" [value]="a.id">{{a.tipo_form}}
+      <mat-label>Cuestionario</mat-label>
+      <mat-select formControlName="cuestionario" [(value)]="idCuestionarioSeleccionado" required>
+        <mat-option *ngFor="let a of lista" [value]="a.id">
+          {{a.tipo_form}}
         </mat-option>
       </mat-select>
     </mat-form-field>
