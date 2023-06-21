@@ -30,7 +30,7 @@ const routes: Routes = [
           {
             path: 'comentarios', component: ComentarioComponent, children: [
               {
-              path:'coment', component:ComentarioListarComponent
+              path:'listar', component:ComentarioListarComponent
               },
                 {
                   path: 'registrar', component: ComentarioRegistrarComponent
