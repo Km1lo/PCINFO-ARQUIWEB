@@ -81,7 +81,7 @@ export class ReporteRegistrarComponent implements OnInit{
               this.ReporteService.setList(data);
             })
           })
-          this.router.navigate(['administradores/mostrar/reporte']);
+          this.router.navigate(['administradores/mostrar/reporte/listar']);
     }
       if (
         this.form.value['descripcion'].length > 0 &&

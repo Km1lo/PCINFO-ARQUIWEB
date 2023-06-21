@@ -72,7 +72,7 @@ export class RecomendacionRegistrarComponent  implements OnInit {
             this.RecomendacionService.setList(data);
           })
         })
-        this.router.navigate(['administradores/mostrar/recomendacion']);
+        this.router.navigate(['administradores/mostrar/recomendacion/listar']);
   }
 
     if (
