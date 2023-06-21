@@ -33,6 +33,7 @@ export class RecomendacionRegistrarComponent  implements OnInit {
   }
   ngOnInit(): void {
     this.cS.list().subscribe(data => { this.lista = data; });
+
     this.route.params.subscribe((data:Params)=>{
       this.id=data['id'];
       this.edicion=data['id']!=null;
@@ -43,7 +44,7 @@ export class RecomendacionRegistrarComponent  implements OnInit {
       id:new FormControl(),
       valoracion_user:new FormControl(),
       notas_adicionales:new FormControl(),
-      usuario :new FormControl()
+      cuestionario :new FormControl()
     })
 }
   init() {
