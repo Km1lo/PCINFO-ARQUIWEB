@@ -18,7 +18,7 @@ export class RecomendacionListarComponent  implements OnInit {
   dataSource:MatTableDataSource<Recomendacion>=new MatTableDataSource();
   idMayor: number = 0;
 
-  displayedColumns:string[]=['id','valoracion_user','notas_adicionales','accion01','accion2']
+  displayedColumns:string[]=['id','valoracion_user','notas_adicionales','cuestionario','accion01','accion2']
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
 

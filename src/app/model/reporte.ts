@@ -1,4 +1,4 @@
-import { Administrador } from "./administrador"
+import { Usuario } from "./usuario"
 
 export class Reporte {
 
@@ -6,6 +6,6 @@ export class Reporte {
   descripcion: string = ""
   fecha: string= ""
   estado: string = ""
-  administrador:Administrador=new Administrador()
+  usuario:Usuario=new Usuario()
 
 }

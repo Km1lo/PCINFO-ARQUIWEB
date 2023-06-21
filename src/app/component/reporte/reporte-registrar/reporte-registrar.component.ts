@@ -6,6 +6,8 @@ import { ReporteService } from 'src/app/service/reporte.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Administrador } from 'src/app/model/administrador';
+import { Usuario } from 'src/app/model/usuario';
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
   selector: 'app-reporte-registrar',
@@ -21,16 +23,17 @@ export class ReporteRegistrarComponent implements OnInit{
     maxFecha: Date = moment().add(1, 'days').toDate();
     id: number = 0;
     edicion: boolean = false; //no es edicion
-    lista: Administrador[] = [];
-  idAdministradorSeleccionado: number = 0;
+    listaUsuario: Usuario[] = [];
+    idUsuarioSeleccionado: number = 0;
     constructor(
       private ReporteService: ReporteService,
       private router: Router,
-      private route: ActivatedRoute
-    ) {
+      private route: ActivatedRoute, private uS: UsuarioService)
+    {
     }
 
     ngOnInit(): void {
+      this.uS.list().subscribe(data => { this.listaUsuario = data; });
 
       this.route.params.subscribe((data: Params) => {
         this.id = data['id']; //capturando el id del listado
@@ -44,7 +47,7 @@ export class ReporteRegistrarComponent implements OnInit{
         hora: new FormControl(),
         descripcion: new FormControl(),
         estado:new FormControl(),
-        administrador :new FormControl()
+        usuario :new FormControl()
     })
   }
 
@@ -56,7 +59,7 @@ export class ReporteRegistrarComponent implements OnInit{
             fecha: new FormControl(data.fecha),
             descripcion: new FormControl(data.descripcion),
             estado:new FormControl(data.estado),
-            administrador :new FormControl(data.administrador)
+            usuario :new FormControl(data.usuario)
           });
         });
       }
@@ -67,17 +70,16 @@ export class ReporteRegistrarComponent implements OnInit{
       this.reporte.fecha = this.form.value['fecha'];
       this.reporte.descripcion = this.form.value['descripcion'];
       this.reporte.estado = this.form.value['estado'];
-      this.reporte.administrador.area_trabajo=this.form.value['administrador.area_trabajo'];
+      this.reporte.usuario.nombre=this.form.value['usuario.nombre'];
 
-      if (this.idAdministradorSeleccionado>0) {
-        let a = new Administrador();
-        a.id = this.idAdministradorSeleccionado;
-        this.reporte.administrador=a;
+      if (this.idUsuarioSeleccionado>0) {
+        let a = new Usuario();
+        a.id = this.idUsuarioSeleccionado;
+        this.reporte.usuario=a;
         this.ReporteService.insert(this.reporte).subscribe(() => {
         this.ReporteService.list().subscribe(data => {
               this.ReporteService.setList(data);
             })
-
           })
           this.router.navigate(['administradores/mostrar/reporte']);
     }

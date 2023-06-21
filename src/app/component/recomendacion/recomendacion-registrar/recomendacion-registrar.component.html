@@ -42,6 +42,14 @@
     </mat-form-field>
     <br>
 
+    <mat-form-field appearance="fill">
+      <mat-label>Usuario</mat-label>
+      <mat-select formControlName="usuario" [(value)]="idCuestionarioSeleccionado" required>
+        <mat-option *ngFor="let a of lista" [value]="a.id">{{a.tipo_form}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
 
 
     <button mat-raised-button type="submit" color="warn" class="mx-3">Aceptar</button>

@@ -115,7 +115,10 @@
           <td mat-cell *matCellDef="let element"> {{element.notas_adicionales}} </td>
         </ng-container>
 
-
+        <ng-container matColumnDef="cuestionario">
+          <th mat-header-cell *matHeaderCellDef> cuestionario </th>
+          <td mat-cell *matCellDef="let element"> {{element.cuestionario.apellidop}} </td>
+        </ng-container>
 
         <ng-container matColumnDef="accion01">
           <th mat-header-cell *matHeaderCellDef> Acciones </th>

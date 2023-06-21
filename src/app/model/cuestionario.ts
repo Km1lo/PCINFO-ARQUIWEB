@@ -1,3 +1,5 @@
+import { Usuario } from "./usuario"
+
 export class Cuestionario{
   id: number=0
   tipo_form: string=""
@@ -9,4 +11,5 @@ export class Cuestionario{
   overclocking: string=""
   marca_procesador: string=""
   programas_used: string=""
+  usuario:Usuario=new Usuario()
 }

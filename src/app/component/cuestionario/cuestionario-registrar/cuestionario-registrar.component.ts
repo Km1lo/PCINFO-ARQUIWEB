@@ -5,6 +5,8 @@ import * as moment from 'moment';
 import { CuestionarioService } from 'src/app/service/cuestionario.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Usuario } from 'src/app/model/usuario';
+import { UsuarioService } from 'src/app/service/usuario.service';
 @Component({
   selector: 'app-cuestionario-registrar',
   templateUrl: './cuestionario-registrar.component.html',
@@ -17,14 +19,17 @@ export class CuestionarioRegistrarComponent implements OnInit {
   mensaje: string = "";
   id: number = 0;
   edicion: boolean = false; //no es edicion
+  lista: Usuario[] = [];
+    idUsuarioSeleccionado: number = 0;
   constructor(
     private CuestionarioService: CuestionarioService,
     private router: Router,
-    private route: ActivatedRoute
-  ) {
+    private route: ActivatedRoute,private uS: UsuarioService)
+   {
   }
 
   ngOnInit(): void {
+    this.uS.list().subscribe(data => { this.lista = data; });
 
     this.route.params.subscribe((data: Params) => {
       this.id = data['id']; //capturando el id del listado
@@ -42,7 +47,8 @@ export class CuestionarioRegistrarComponent implements OnInit {
       tipo_de_refrigeracion:new FormControl(),
       overclocking:new FormControl(),
       marca_procesador:new FormControl(),
-      programas_used:new FormControl()
+      programas_used:new FormControl(),
+      usuario :new FormControl()
   })
 }
 
@@ -59,7 +65,8 @@ export class CuestionarioRegistrarComponent implements OnInit {
           tipo_de_refrigeracion:new FormControl(data.tipo_de_refrigeracion),
           overclocking:new FormControl(data.overclocking),
           marca_procesador:new FormControl(data.marca_procesador),
-          programas_used:new FormControl(data.programas_used)
+          programas_used:new FormControl(data.programas_used),
+          usuario :new FormControl()
         });
       });
     }
@@ -76,7 +83,19 @@ export class CuestionarioRegistrarComponent implements OnInit {
     this.cuestionario.overclocking = this.form.value['overclocking'];
     this.cuestionario.marca_procesador = this.form.value['marca_procesador'];
     this.cuestionario.programas_used = this.form.value['programas_used'];
+    this.cuestionario.usuario.apellidop=this.form.value['usuario.apellidop'];
 
+    if (this.idUsuarioSeleccionado>0) {
+      let a = new Usuario();
+      a.id = this.idUsuarioSeleccionado;
+      this.cuestionario.usuario=a;
+      this.CuestionarioService.insert(this.cuestionario).subscribe(() => {
+      this.CuestionarioService.list().subscribe(data => {
+            this.CuestionarioService.setList(data);
+          })
+        })
+        this.router.navigate(['administradores/mostrar/cuestionarios/listar']);
+  }
 
     if (
       this.form.value['tipo_form'].length >0 &&

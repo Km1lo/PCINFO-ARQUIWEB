@@ -20,7 +20,7 @@ export class ReporteListarComponent implements OnInit {
 
 dataSource:MatTableDataSource<Reporte> = new MatTableDataSource();
 idMayor: number = 0;
-displayedColumns: string[] = ['id_reporte', 'descripcion', 'fecha', 'estado','administrador','accion01','accion2']
+displayedColumns: string[] = ['id_reporte', 'descripcion', 'fecha', 'estado','usuario','accion01','accion2']
 @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
 

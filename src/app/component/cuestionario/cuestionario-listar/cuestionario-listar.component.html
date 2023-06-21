@@ -93,6 +93,11 @@
           <td mat-cell *matCellDef="let element"> {{element.programas_used}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="usuario">
+          <th mat-header-cell *matHeaderCellDef> usuario </th>
+          <td mat-cell *matCellDef="let element"> {{element.usuario.apellidop}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="accion01">
           <th mat-header-cell *matHeaderCellDef> Acciones </th>
           <td mat-cell *matCellDef="let element">

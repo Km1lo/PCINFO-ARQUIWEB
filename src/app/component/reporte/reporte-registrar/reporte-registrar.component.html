@@ -49,9 +49,10 @@
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill">
-      <mat-label>Administrador</mat-label>
-      <mat-select formControlName="administrador" [(value)]="idAdministradorSeleccionado" required>
-        <mat-option *ngFor="let a of lista" [value]="a.id">{{a.area_trabajo}}
+      <mat-label>Usuario</mat-label>
+      <mat-select formControlName="usuario" [(value)]="idUsuarioSeleccionado" required>
+        <mat-option *ngFor="let a of listaUsuario" [value]="a.id">
+          {{a.nombre}}
         </mat-option>
       </mat-select>
     </mat-form-field>

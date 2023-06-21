@@ -15,7 +15,7 @@ export class CuestionarioListarComponent implements OnInit{
   dataSource:MatTableDataSource<Cuestionario> = new MatTableDataSource();
   idMayor: number = 0;
 
-  displayedColumns: string[] = ['id_cuestionario', 'tipo_form', 'uso_de_pc', 'presupuesto', 'tamano_del_pc','diseno','tipo_de_refrigeracion','overclocking','marca_procesador','programas_used','accion01','accion2']
+  displayedColumns: string[] = ['id_cuestionario', 'tipo_form', 'uso_de_pc', 'presupuesto', 'tamano_del_pc','diseno','tipo_de_refrigeracion','overclocking','marca_procesador','programas_used','usuario','accion01','accion2']
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
 

@@ -4,6 +4,9 @@ import { Recomendacion } from 'src/app/model/recomendacion';
 import * as moment from 'moment';
 import { RecomendacionService } from 'src/app/service/recomendacion.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Usuario } from 'src/app/model/usuario';
+import { Cuestionario } from 'src/app/model/cuestionario';
+import { CuestionarioService } from 'src/app/service/cuestionario.service';
 
 
 @Component({
@@ -18,15 +21,18 @@ export class RecomendacionRegistrarComponent  implements OnInit {
   maxFecha: Date=moment().add(1,'days').toDate();
   id:number=0;
   edicion:boolean=false;
+  lista: Cuestionario[] = [];
+  idCuestionarioSeleccionado:number =0;
 
   constructor(
     private RecomendacionService:RecomendacionService,
     private router:Router,
-    private route:ActivatedRoute
-  ){
+    private route:ActivatedRoute, private cS: CuestionarioService)
+  {
 
   }
   ngOnInit(): void {
+    this.cS.list().subscribe(data => { this.lista = data; });
     this.route.params.subscribe((data:Params)=>{
       this.id=data['id'];
       this.edicion=data['id']!=null;
@@ -36,7 +42,8 @@ export class RecomendacionRegistrarComponent  implements OnInit {
     this.form=new FormGroup({
       id:new FormControl(),
       valoracion_user:new FormControl(),
-      notas_adicionales:new FormControl()
+      notas_adicionales:new FormControl(),
+      usuario :new FormControl()
     })
 }
   init() {
@@ -46,7 +53,7 @@ export class RecomendacionRegistrarComponent  implements OnInit {
           id: new FormControl(data.id),
           valoracion_user: new FormControl(data.valoracion_user),
           notas_adicionales: new FormControl(data.notas_adicionales),
-
+          cuestionario :new FormControl(data.cuestionario)
         });
       });
     }
@@ -55,6 +62,18 @@ export class RecomendacionRegistrarComponent  implements OnInit {
     this.recomendacion.id = this.form.value['id'];
     this.recomendacion.valoracion_user = this.form.value['valoracion_user'];
     this.recomendacion.notas_adicionales = this.form.value['notas_adicionales'];
+    this.recomendacion.cuestionario.tipo_form=this.form.value['cuestionario.tipo_form'];
+    if (this.idCuestionarioSeleccionado>0) {
+      let a = new Cuestionario();
+      a.id = this.idCuestionarioSeleccionado;
+      this.recomendacion.cuestionario=a;
+      this.RecomendacionService.insert(this.recomendacion).subscribe(() => {
+      this.RecomendacionService.list().subscribe(data => {
+            this.RecomendacionService.setList(data);
+          })
+        })
+        this.router.navigate(['administradores/mostrar/recomendacion']);
+  }
 
     if (
       this.form.value['notas_adicionales'].length > 0
