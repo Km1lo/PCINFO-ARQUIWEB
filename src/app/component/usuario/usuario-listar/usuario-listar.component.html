@@ -16,7 +16,7 @@
     <mat-grid-tile>
       <div style="text-align: right;">
 
-        <button mat-raised-button color="warn" routerLink="/administradores/mostrar/usuario/registrar" >Nuevo</button>
+        <button mat-raised-button color="warn" routerLink="/pages/administradores/mostrar/usuario/registrar" >Nuevo</button>
       </div>
     </mat-grid-tile>
     <mat-grid-tile>
@@ -96,7 +96,7 @@
           <th mat-header-cell *matHeaderCellDef> Acciones </th>
           <td mat-cell *matCellDef="let element">
           <button mat-raised-button color="warn"
-              [routerLink]="['/administradores/mostrar/usuario/editar',element.id]"><i class="fa-solid fa-rotate" style="color: #ffffff;"></i></button>
+              [routerLink]="['/pages/administradores/mostrar/usuario/editar',element.id]"><i class="fa-solid fa-rotate" style="color: #ffffff;"></i></button>
           </td>
         </ng-container>
 
