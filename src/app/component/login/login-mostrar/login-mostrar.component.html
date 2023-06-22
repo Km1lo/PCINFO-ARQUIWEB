@@ -59,13 +59,13 @@
         <div class="contenedor">
           <div class="input-contenedor">
             <i class="fa-solid fa-user icon"></i>
-            <input type="text" placeholder="Usuario" name="usuario" id="usuario"/>
+            <input matInput type="text" placeholder="Username" [(ngModel)]="username" name="username" />
           </div>
           <div class="input-contenedor">
             <i class="fa-solid fa-lock icon"></i>
-            <input type="password" placeholder="Contraseña"name="contraseña" id="contraseña" />
+            <input type="password" matInput  placeholder="Password" [(ngModel)]="password" name="password" />
           </div>
-          <input type="button" value="Login" class="button" id="boton" routerLink="/administradores/mostrar"/>
+          <input type="button" value="Login" class="button" id="boton" (click)="login()"/>
           <p>
             ¿Perdiste tu contraseña? <a class="link" >Recuperar</a>
           </p>
