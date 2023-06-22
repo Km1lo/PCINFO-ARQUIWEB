@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Cuestionario } from '../model/cuestionario';
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const base_url=environment.base
 @Injectable({
@@ -15,17 +15,29 @@ export class CuestionarioService {
   private confirmarEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Cuestionario[]>()
   list(){
-    return this.http.get<Cuestionario[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Cuestionario[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   listId(id:number){
-    return this.http.get<Cuestionario>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Cuestionario>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(rep: Cuestionario){
-    return this.http.put(this.url, rep);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, rep, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+    }
   insert(cuestionario : Cuestionario){
-    return this.http.post(this.url, cuestionario);
- }
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, cuestionario, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
  getConfirmDelete(){
   return this.confirmarEliminacion.asObservable();
 }
@@ -33,7 +45,10 @@ setConfirmDelete(estado:Boolean){
   this.confirmarEliminacion.next(estado);
 }
 delete(id: number) {
-  return this.http.delete(`${this.url}/${id}`)
+  let token = sessionStorage.getItem("token");
+  return this.http.delete(`${this.url}/${id}`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
 }
 setList(listaNueva: Cuestionario[]) {
   this.listaCambio.next(listaNueva);
