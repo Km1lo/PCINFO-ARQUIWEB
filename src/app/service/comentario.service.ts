@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Comentario } from '../model/comentario';
 import { Subject } from 'rxjs';
@@ -17,18 +17,29 @@ export class ComentarioService {
   private listaCambio = new Subject<Comentario[]>()
 
   list(){
-    return this.http.get<Comentario[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Comentario[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   listId(id:number){
-    return this.http.get<Comentario>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Comentario>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(com: Comentario){
-    //return this.http.put(this.url+"/"+com.id, com);
-    return this.http.put(this.url, com);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, com, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+    }
   insert(comentario : Comentario){
-    return this.http.post(this.url, comentario);
- }
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, comentario, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
  getConfirmDelete(){
   return this.confirmarEliminacion.asObservable();
 }
@@ -36,7 +47,10 @@ setConfirmDelete(estado:Boolean){
   this.confirmarEliminacion.next(estado);
 }
 delete(id: number) {
-  return this.http.delete(`${this.url}/${id}`)
+  let token = sessionStorage.getItem("token");
+  return this.http.delete(`${this.url}/${id}`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
 }
 setList(listaNueva: Comentario[]) {
   this.listaCambio.next(listaNueva);
