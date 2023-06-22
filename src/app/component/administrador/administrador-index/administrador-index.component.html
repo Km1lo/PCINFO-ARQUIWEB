@@ -57,95 +57,10 @@
 
         </div>
     </div>
-    <!-- Fin sidebar -->
+    
 
-      <div class="w-100">
-
-
-
-      <ng-container>
-        <ng-container [ngSwitch]="selectedValor">
-          <ng-container *ngSwitchCase="0">
-            <div id="recomendacion" class="bg-grey w-100">
-              <router-outlet></router-outlet>
-              <div [hidden]="route.children.length!==0">
-                <app-recomendacion-listar></app-recomendacion-listar>
-              </div>
-            </div>
-          </ng-container>
-          <ng-container *ngSwitchCase="1">
-            <div id="recomendacion" class="bg-grey w-100">
-              <router-outlet></router-outlet>
-              <div [hidden]="route.children.length!==0">
-                <app-recomendacion-listar></app-recomendacion-listar>
-              </div>
-            </div>
-          </ng-container>
-          <ng-container *ngSwitchCase="2">
-            <div id="reporte" class="bg-grey w-100">
-              <router-outlet></router-outlet>
-
-              <div [hidden]="route.children.length!==0">
-                <app-reporte-listar></app-reporte-listar>
-              </div>
-            </div>
-
-          </ng-container>
-          <ng-container *ngSwitchCase="3">
-            <div id="reporte" class="bg-grey w-100">
-              <router-outlet></router-outlet>
-
-              <div [hidden]="route.children.length!==0">
-                <app-administrador-listar></app-administrador-listar>
-              </div>
-            </div>
-          </ng-container>
-          <ng-container *ngSwitchCase="4">
-            <div id="content3" class="bg-grey w-100">
-              <router-outlet></router-outlet>
-              <div [hidden]="route.children.length!==0">
-                <app-comentario-listar></app-comentario-listar>
-                </div>
-            </div>
-          </ng-container>
-          <ng-container *ngSwitchCase="5">
-            <div id="content4" class="bg-grey w-100">
-              <router-outlet></router-outlet>
-
-              <div [hidden]="route.children.length!==0">
-                <app-cuestionario-listar></app-cuestionario-listar>
-              </div>
-            </div>
-          </ng-container>
-          <ng-container *ngSwitchCase="6">
-            <div id="content5" class="bg-grey w-100">
-              <router-outlet></router-outlet>
-
-              <div [hidden]="route.children.length!==0">
-                <app-usuario-listar></app-usuario-listar>
-              </div>
-            </div>
-          </ng-container>
-        </ng-container>
-      </ng-container>
-        <!-- Fin Navbar -->
-
-      <!-- Page Content -->
-      <!--
-
-
-
-
-
-
-
-      <div id="content5" class="bg-grey w-100">
-        <router-outlet></router-outlet>
-        <div [hidden]="route.children.length!==0">
-          <app-cuestionario-listar></app-cuestionario-listar>
-          </div>
-      </div>-->
-      </div>
+      
+      
   </div>
 
   <!-- Optional JavaScript -->
@@ -160,41 +75,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
-      <script>
-          var ctx = document.getElementById('myChart').getContext('2d');
-          var myChart = new Chart(ctx, {
-              type: 'bar',
-              data: {
-                  labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves','Viernes','Sábado','Domingo'],
-                  datasets: [{
-
-                      label: ['Nuevos usuarios','gatos'],
-                      data: [50, 100, 150, 170,60,120,45],
-
-                      backgroundColor: [
-                          '#12C9E5',
-                          '#12C9E5',
-                          '#12C9E5',
-                          '#111B54',
-                          '#12C9E5',
-                          '#12C9E5',
-                          '#12C9E5'
-                      ],
-                      maxBarThickness: 30,
-                      maxBarLength: 2
-                  }]
-              },
-              options: {
-                  scales: {
-                      yAxes: [{
-                          ticks: {
-                              beginAtZero: true
-                          }
-                      }]
-                  }
-              }
-          });
-          </script>
 </body>
 
 </html>
