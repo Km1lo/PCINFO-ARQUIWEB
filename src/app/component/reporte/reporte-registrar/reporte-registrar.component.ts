@@ -94,14 +94,8 @@ export class ReporteRegistrarComponent implements OnInit{
             this.ReporteService.setList(data);
           })
           );
-        } else {
-          //registrarlo en la base de  datos
-          this.ReporteService.insert(this.reporte).subscribe((data) =>
-          this.ReporteService.list().subscribe(data=>{
-            this.ReporteService.setList(data);
-          })
-          );
         }
+
 
         this.router.navigate(['administradores/mostrar/reporte']);
 
