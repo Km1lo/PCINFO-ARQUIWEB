@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Reporte } from '../model/reporte';
 import { Subject } from 'rxjs';
@@ -15,17 +15,29 @@ export class ReporteService {
   private confirmarEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Reporte[]>()
   list(){
-    return this.http.get<Reporte[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Reporte[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   listId(id:number){
-    return this.http.get<Reporte>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Reporte>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(rep: Reporte){
-    return this.http.put(this.url, rep);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, rep, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+    }
   insert(reporte : Reporte){
-    return this.http.post(this.url, reporte);
- }
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, reporte, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
  getConfirmDelete(){
   return this.confirmarEliminacion.asObservable();
 }
@@ -33,7 +45,10 @@ setConfirmDelete(estado:Boolean){
   this.confirmarEliminacion.next(estado);
 }
 delete(id: number) {
-  return this.http.delete(`${this.url}/${id}`)
+  let token = sessionStorage.getItem("token");
+  return this.http.delete(`${this.url}/${id}`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
 }
 setList(listaNueva: Reporte[]) {
   this.listaCambio.next(listaNueva);
