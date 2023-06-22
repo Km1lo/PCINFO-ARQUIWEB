@@ -14,6 +14,7 @@ import { Usuario } from 'src/app/model/usuario';
   styleUrls: ['./comentario-registrar.component.css']
 })
 export class ComentarioRegistrarComponent implements OnInit {
+
   form: FormGroup = new FormGroup({});
   comentarioo: Comentario = new Comentario();
   mensaje: string = "";
@@ -76,7 +77,17 @@ aceptar(): void {
   this.comentarioo.fecha = this.form.value['fecha'];
   this.comentarioo.idUsuario.nombre = this.form.value['idUsuario.nombre'];
 
-
+  if (this.idUsuarioSeleccionado>0) {
+    let a = new Usuario();
+    a.id = this.idUsuarioSeleccionado;
+    this.comentarioo.idUsuario=a;
+    this.ComentarioService.insert(this.comentarioo).subscribe(() => {
+    this.ComentarioService.list().subscribe(data => {
+          this.ComentarioService.setList(data);
+        })
+      })
+      this.router.navigate(['administradores/mostrar/comentarios']);
+}
 
 
 
@@ -89,16 +100,9 @@ aceptar(): void {
         })
 
       );
-    } else if (this.idUsuarioSeleccionado>0){
-      let a = new Usuario();
-      a.id = this.idUsuarioSeleccionado;
-      this.comentarioo.idUsuario=a;
-      this.ComentarioService.insert(this.comentarioo).subscribe((data) =>
-        this.ComentarioService.list().subscribe(data=>{
-          this.ComentarioService.setList(data);
-        })
-      );
     }
+
+
     this.router.navigate(['administradores/mostrar/comentarios']);
   }
   else {

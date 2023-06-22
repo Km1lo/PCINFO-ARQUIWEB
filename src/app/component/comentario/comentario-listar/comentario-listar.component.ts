@@ -17,7 +17,7 @@ import { ViewChild } from '@angular/core';
 })
 export class ComentarioListarComponent implements OnInit {
 
-  lista: Comentario[]=[]
+  lista: Comentario[]=[];
 
   dataSource:MatTableDataSource<Comentario> = new MatTableDataSource();
   idMayor: number = 0;

@@ -113,14 +113,8 @@ export class CuestionarioRegistrarComponent implements OnInit {
           this.CuestionarioService.setList(data);
         })
         );
-      } else {
-        //registrarlo en la base de  datos
-        this.CuestionarioService.insert(this.cuestionario).subscribe((data) =>
-        this.CuestionarioService.list().subscribe(data=>{
-          this.CuestionarioService.setList(data);
-        })
-        );
       }
+
       this.router.navigate(['administradores/mostrar/cuestionarios/listar']);
 
     } else {
