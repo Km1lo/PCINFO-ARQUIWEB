@@ -15,69 +15,21 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ComentarioComponent } from './component/comentario/comentario.component';
-import { ComentarioListarComponent } from './component/comentario/comentario-listar/comentario-listar.component';
-import { ComentarioRegistrarComponent } from './component/comentario/comentario-registrar/comentario-registrar.component';
-import { ComentarioDialogoComponent } from './component/comentario/comentario-listar/comentario-dialogo/comentario-dialogo.component';
-import { ReporteComponent } from './component/reporte/reporte.component';
-import { ReporteListarComponent } from './component/reporte/reporte-listar/reporte-listar.component';
-import { ReporteRegistrarComponent } from './component/reporte/reporte-registrar/reporte-registrar.component';
-import { ReporteDialogoComponent } from './component/reporte/reporte-listar/reporte-dialogo/reporte-dialogo.component';
 import { MatSelectModule } from '@angular/material/select';
-import { AdministradorComponent } from './component/administrador/administrador.component';
-import { AdministradorListarComponent } from './component/administrador/administrador-listar/administrador-listar.component';
-import { AdministradorRegistrarComponent } from './component/administrador/administrador-registrar/administrador-registrar.component';
-import { AdministradorDialogoComponent } from './component/administrador/administrador-listar/administrador-dialogo/administrador-dialogo.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { RecomendacionComponent } from './component/recomendacion/recomendacion.component';
-import { RecomendacionListarComponent } from './component/recomendacion/recomendacion-listar/recomendacion-listar.component';
-import { RecomendacionRegistrarComponent } from './component/recomendacion/recomendacion-registrar/recomendacion-registrar.component';
-import { RecomendacionDialogoComponent } from './component/recomendacion/recomendacion-listar/recomendacion-dialogo/recomendacion-dialogo.component';
-import { CuestionarioComponent } from './component/cuestionario/cuestionario.component';
-import { CuestionarioListarComponent } from './component/cuestionario/cuestionario-listar/cuestionario-listar.component';
-import { CuestionarioRegistrarComponent } from './component/cuestionario/cuestionario-registrar/cuestionario-registrar.component';
-import { CuestionarioDialogoComponent } from './component/cuestionario/cuestionario-listar/cuestionario-dialogo/cuestionario-dialogo.component';
 import { IndexaComponent } from './component/indexa/indexa.component';
 import { IndexMostrarComponent } from './component/indexa/index-mostrar/index-mostrar.component';
 import { LoginComponent } from './component/login/login.component';
 import { LoginMostrarComponent } from './component/login/login-mostrar/login-mostrar.component';
-import { AdministradorIndexComponent } from './component/administrador/administrador-index/administrador-index.component';
-import { UsuarioComponent } from './component/usuario/usuario.component';
-import { UsuarioListarComponent } from './component/usuario/usuario-listar/usuario-listar.component';
-import { UsuarioRegistrarComponent } from './component/usuario/usuario-registrar/usuario-registrar.component';
-import { UsuarioDialogoComponent } from './component/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ComentarioComponent,
-    ComentarioListarComponent,
-    ComentarioRegistrarComponent,
-    ComentarioDialogoComponent,
-    ReporteComponent,
-    ReporteListarComponent,
-    ReporteRegistrarComponent,
-    ReporteDialogoComponent,
-    AdministradorComponent,
-    AdministradorListarComponent,
-    AdministradorRegistrarComponent,
-    AdministradorDialogoComponent,
-    RecomendacionComponent,
-    RecomendacionListarComponent,
-    RecomendacionRegistrarComponent,
-    RecomendacionDialogoComponent,
-    CuestionarioComponent,
-    CuestionarioListarComponent,
-    CuestionarioRegistrarComponent,
-    CuestionarioDialogoComponent,
     IndexaComponent,
     IndexMostrarComponent,
     LoginComponent,
-    LoginMostrarComponent,
-    AdministradorIndexComponent,
-    UsuarioComponent,
-    UsuarioListarComponent,
-    UsuarioRegistrarComponent,
-    UsuarioDialogoComponent
+    LoginMostrarComponent
   ],
   imports: [
     BrowserModule,
@@ -96,8 +48,9 @@ import { UsuarioDialogoComponent } from './component/usuario/usuario-listar/usua
     MatButtonModule,
     MatDialogModule,
     MatSelectModule,
-    MatCheckboxModule
-
+    MatCheckboxModule,
+    AppRoutingModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
