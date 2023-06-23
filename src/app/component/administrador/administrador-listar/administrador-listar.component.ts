@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AdministradorDialogoComponent } from './administrador-dialogo/administrador-dialogo.component';
 import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-administrador-listar',
@@ -13,6 +14,7 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./administrador-listar.component.css']
 })
 export class AdministradorListarComponent implements OnInit {
+  role:string="";
   dataSource:MatTableDataSource<Administrador> = new MatTableDataSource();
   idMayor: number = 0;
 
@@ -20,8 +22,10 @@ export class AdministradorListarComponent implements OnInit {
   displayedColumns: string[] = ['id_administrador','profesion', 'area_trabajo', 'horario', 'cumpleanos', 'estado_vacaciones', 'estado_contrato','accion01','accion2']
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
-  constructor(private aS:AdministradorService, private dialog:MatDialog) { }
+  constructor(private aS:AdministradorService, private dialog:MatDialog, private ls:LoginService) { }
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+    console.log(this.role);
     this.aS.list().subscribe(data=>{
       this.dataSource= new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;

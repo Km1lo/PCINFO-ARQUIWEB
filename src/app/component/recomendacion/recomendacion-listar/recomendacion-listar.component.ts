@@ -22,7 +22,7 @@ export class RecomendacionListarComponent  implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
 
-  constructor(private as:RecomendacionService,private dialog:MatDialog){}
+  constructor(private as:RecomendacionService,private dialog:MatDialog ){}
   ngOnInit(): void {
       this.as.list().subscribe(data=>{
         this.dataSource=new MatTableDataSource(data);

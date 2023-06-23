@@ -23,6 +23,7 @@ import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.
 import { GuardService } from '../service/guard.service';
 
 const routes: Routes = [
+  /*
   {
     path: 'administradores', component: AdministradorComponent, children: [
 
@@ -40,16 +41,9 @@ const routes: Routes = [
            //Siguiente
            {
              path: 'recomendacion', component: RecomendacionComponent, children: [
-               {
-                 path: 'registrar', component: RecomendacionRegistrarComponent
-               },
-               {
-                 path: 'editar/:id', component: RecomendacionRegistrarComponent
-               },
-               {
-                 path:'listar', component:RecomendacionListarComponent
-
-               }
+               { path: 'registrar', component: RecomendacionRegistrarComponent },
+               { path: 'editar/:id', component: RecomendacionRegistrarComponent },
+               { path:'listar', component:RecomendacionListarComponent }
              ],canActivate:[GuardService]
            }
            //siguiente
@@ -100,8 +94,46 @@ const routes: Routes = [
 
       }
     ]
-  },
+  },*/
 
+  {
+    path: 'comentarios', component: ComentarioComponent, children: [
+
+      { path:'listar', component:ComentarioListarComponent },
+      { path: 'registrar', component: ComentarioRegistrarComponent },
+      { path: 'editar/:id', component: ComentarioRegistrarComponent }
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'recomendacion', component: RecomendacionComponent, children: [
+      
+      { path: 'editar/:id', component: RecomendacionRegistrarComponent },
+      { path:'listar', component:RecomendacionListarComponent }
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'usuario', component: UsuarioComponent, children: [
+      { path: 'registrar', component: UsuarioRegistrarComponent },
+      { path: 'editar/:id', component: UsuarioRegistrarComponent },
+      { path:'listar', component: UsuarioListarComponent }
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'cuestionarios',component: CuestionarioComponent, children:[
+      { path: 'registrar', component: CuestionarioRegistrarComponent },
+      { path: 'editar/:id', component: CuestionarioRegistrarComponent },
+      { path:'listar', component: CuestionarioListarComponent }
+    ],canActivate:[GuardService]
+  },
+  {
+   path: 'reportes', component: ReporteComponent, children: [
+     { path: 'registrar', component: ReporteRegistrarComponent },
+     { path: 'editar/:id', component: ReporteRegistrarComponent },
+     { path: 'listar', component: ReporteListarComponent }
+   ],canActivate:[GuardService]
+  },
+  { path: 'recomendacion/registrar', component: RecomendacionRegistrarComponent },
+  
 
 ];
 

@@ -24,7 +24,7 @@ export class LoginMostrarComponent implements OnInit {
     request.password = this.password;
     this.loginService.login(request).subscribe((data: any) => {
       sessionStorage.setItem("token", data.jwttoken);
-      this.router.navigate(['/pages/administradores/mostrar']);
+      this.router.navigate(['/pages/recomendacion/listar']);
     }, error => {
       this.mensaje = "Credenciales incorrectas!!!"
       this.snackBar.open(this.mensaje, "Aviso",{duration:2000});

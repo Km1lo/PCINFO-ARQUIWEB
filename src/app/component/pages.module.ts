@@ -43,6 +43,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
 import { UsuarioRegistrarComponent } from './usuario/usuario-registrar/usuario-registrar.component';
 import { UsuarioDialogoComponent } from './usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ToolbarIndexComponent } from './toolbar/toolbar-index/toolbar-index.component';
 @NgModule({
   declarations: [
     
@@ -70,7 +72,9 @@ import { UsuarioDialogoComponent } from './usuario/usuario-listar/usuario-dialog
     UsuarioComponent,
     UsuarioListarComponent,
     UsuarioRegistrarComponent,
-    UsuarioDialogoComponent
+    UsuarioDialogoComponent,
+    ToolbarComponent,
+    ToolbarIndexComponent
   ],
   imports: [
     CommonModule,
