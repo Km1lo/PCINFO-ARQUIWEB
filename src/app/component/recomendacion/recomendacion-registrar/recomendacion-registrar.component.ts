@@ -73,7 +73,7 @@ export class RecomendacionRegistrarComponent  implements OnInit {
             this.RecomendacionService.setList(data);
           })
         })
-        this.router.navigate(['administradores/mostrar/recomendacion/listar']);
+        this.router.navigate(['/pages/recomendacion/listar']);
   }
 
     if (
@@ -93,7 +93,7 @@ export class RecomendacionRegistrarComponent  implements OnInit {
         })
         );
       }
-      this.router.navigate(['administradores/mostrar/recomendacion']);
+      this.router.navigate(['/pages/recomendacion/listar']);
     }
      else {
       this.mensaje = 'Ingrese la descripcion o estado';

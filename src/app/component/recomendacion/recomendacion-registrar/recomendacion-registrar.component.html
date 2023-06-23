@@ -39,39 +39,6 @@
       </div>
   </nav>
 </header>
-<header >
-  <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
-      <div class="container-fluid">
-        <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-              <li class="nav-item px-3">
-                <a class="nav-link active" aria-current="page"  routerLink="/pages/recomendacion/listar" >Recomendacion</a>
-              </li>
-              <li class="nav-item px-3">
-                  <a class="nav-link active" aria-current="page"  routerLink="/pages/reportes/listar" >Reporte</a>
-              </li>
-              <li class="nav-item px-3">
-                  <a class="nav-link active" aria-current="page"  routerLink="/pages/comentarios/listar" >Comentario</a>
-              </li>
-              <li class="nav-item px-3">
-                  <a class="nav-link active" aria-current="page"  routerLink="/pages/cuestionarios/listar" >Cuestionario</a>
-              </li>
-              <li class="nav-item px-3">
-                <a class="nav-link active" aria-current="page"  routerLink="/pages/usuario/listar" >Usuario</a>
-            </li>
-              <li>
-                  <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
-
-              </li>
-          </ul>
-          </div>
-      </div>
-  </nav>
-</header>
 <body  style="background-color:rgb(233, 222, 222)">
 
 
@@ -119,7 +86,7 @@
 
 
     <button mat-raised-button type="submit" color="warn" class="mx-3">Aceptar</button>
-    <button mat-raised-button color="warn" routerLink="/administradores/mostrar/recomendacion/listar" class="mx-3">Cancelar</button>
+    <button mat-raised-button color="warn" routerLink="/pages/recomendacion/listar" class="mx-3">Cancelar</button>
     <p>{{mensaje}}</p>
 
   </form>

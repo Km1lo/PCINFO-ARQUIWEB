@@ -86,7 +86,7 @@ aceptar(): void {
           this.ComentarioService.setList(data);
         })
       })
-      this.router.navigate(['administradores/mostrar/comentarios']);
+      this.router.navigate(['/pages/comentarios/listar']);
 }
 
 
@@ -103,7 +103,7 @@ aceptar(): void {
     }
 
 
-    this.router.navigate(['administradores/mostrar/comentarios']);
+    this.router.navigate(['/pages/comentarios/listar']);
   }
   else {
     this.mensaje = "Llene todos los campos";

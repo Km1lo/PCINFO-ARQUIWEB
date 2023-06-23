@@ -94,7 +94,7 @@ export class CuestionarioRegistrarComponent implements OnInit {
             this.CuestionarioService.setList(data);
           })
         })
-        this.router.navigate(['administradores/mostrar/cuestionarios/listar']);
+        this.router.navigate(['/pages/cuestionarios/listar']);
   }
 
     if (
@@ -115,7 +115,7 @@ export class CuestionarioRegistrarComponent implements OnInit {
         );
       }
 
-      this.router.navigate(['administradores/mostrar/cuestionarios/listar']);
+      this.router.navigate(['/pages/cuestionarios/listar']);
 
     } else {
       this.mensaje = 'Ingrese la descripcion o estado';
