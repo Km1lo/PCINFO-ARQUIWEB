@@ -98,7 +98,7 @@ export class UsuarioRegistrarComponent implements OnInit {
           })
         );
       }
-      this.router.navigate(['administradores/mostrar/usuario']);
+      this.router.navigate(['/pages/administradores/mostrar/usuario']);
     }
     else {
       this.mensaje = "Llene todos los campos";
