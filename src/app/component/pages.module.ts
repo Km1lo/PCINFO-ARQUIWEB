@@ -25,10 +25,6 @@ import { ReporteListarComponent } from './reporte/reporte-listar/reporte-listar.
 import { ReporteRegistrarComponent } from './reporte/reporte-registrar/reporte-registrar.component';
 import { ReporteDialogoComponent } from './reporte/reporte-listar/reporte-dialogo/reporte-dialogo.component';
 import { MatSelectModule } from '@angular/material/select';
-import { AdministradorComponent } from './administrador/administrador.component';
-import { AdministradorListarComponent } from './administrador/administrador-listar/administrador-listar.component';
-import { AdministradorRegistrarComponent } from './administrador/administrador-registrar/administrador-registrar.component';
-import { AdministradorDialogoComponent } from './administrador/administrador-listar/administrador-dialogo/administrador-dialogo.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RecomendacionComponent } from './recomendacion/recomendacion.component';
 import { RecomendacionListarComponent } from './recomendacion/recomendacion-listar/recomendacion-listar.component';
@@ -38,7 +34,6 @@ import { CuestionarioComponent } from './cuestionario/cuestionario.component';
 import { CuestionarioListarComponent } from './cuestionario/cuestionario-listar/cuestionario-listar.component';
 import { CuestionarioRegistrarComponent } from './cuestionario/cuestionario-registrar/cuestionario-registrar.component';
 import { CuestionarioDialogoComponent } from './cuestionario/cuestionario-listar/cuestionario-dialogo/cuestionario-dialogo.component';
-import { AdministradorIndexComponent } from './administrador/administrador-index/administrador-index.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
 import { UsuarioRegistrarComponent } from './usuario/usuario-registrar/usuario-registrar.component';
@@ -47,7 +42,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarIndexComponent } from './toolbar/toolbar-index/toolbar-index.component';
 @NgModule({
   declarations: [
-    
+
     ComentarioComponent,
     ComentarioListarComponent,
     ComentarioRegistrarComponent,
@@ -56,10 +51,6 @@ import { ToolbarIndexComponent } from './toolbar/toolbar-index/toolbar-index.com
     ReporteListarComponent,
     ReporteRegistrarComponent,
     ReporteDialogoComponent,
-    AdministradorComponent,
-    AdministradorListarComponent,
-    AdministradorRegistrarComponent,
-    AdministradorDialogoComponent,
     RecomendacionComponent,
     RecomendacionListarComponent,
     RecomendacionRegistrarComponent,
@@ -68,7 +59,6 @@ import { ToolbarIndexComponent } from './toolbar/toolbar-index/toolbar-index.com
     CuestionarioListarComponent,
     CuestionarioRegistrarComponent,
     CuestionarioDialogoComponent,
-    AdministradorIndexComponent,
     UsuarioComponent,
     UsuarioListarComponent,
     UsuarioRegistrarComponent,
