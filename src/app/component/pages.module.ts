@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatTableModule } from '@angular/material/table';
@@ -14,7 +15,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
 import { PagesRoutingModule } from './pages-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ComentarioComponent } from './comentario/comentario.component';
 import { ComentarioListarComponent } from './comentario/comentario-listar/comentario-listar.component';
 import { ComentarioRegistrarComponent } from './comentario/comentario-registrar/comentario-registrar.component';
@@ -72,7 +73,7 @@ import { UsuarioDialogoComponent } from './usuario/usuario-listar/usuario-dialog
     UsuarioDialogoComponent
   ],
   imports: [
-    BrowserAnimationsModule,
+    CommonModule,
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
