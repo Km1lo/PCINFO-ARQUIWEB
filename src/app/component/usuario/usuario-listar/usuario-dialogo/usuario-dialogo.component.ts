@@ -14,7 +14,6 @@ export class UsuarioDialogoComponent implements OnInit {
     confirmar(estado: boolean){
       this.uS.setConfirmDelete(estado);
       this.dialogRef.close();
-      window.location.reload();
     }
 
 }

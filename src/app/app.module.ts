@@ -22,6 +22,7 @@ import { IndexMostrarComponent } from './component/indexa/index-mostrar/index-mo
 import { LoginComponent } from './component/login/login.component';
 import { LoginMostrarComponent } from './component/login/login-mostrar/login-mostrar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSelectModule,
     MatCheckboxModule,
     AppRoutingModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:rgb(233, 222, 222)">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<header >
+  <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
+      <div class="container-fluid">
+        <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/recomendacion/listar" >Recomendacion</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/pages/reportes/listar" >Reporte</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/pages/comentarios/listar" >Comentario</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/pages/cuestionarios/listar" >Cuestionario</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/componentes/listar" >Componentes</a>
+            </li>
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/usuario/listar" >Usuario</a>
+            </li>
+              <li>
+                  <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
+
+              </li>
+          </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+<body style="background-color:rgb(233, 222, 222)">
+<div style="background-color:rgb(233, 222, 222)">
+
+
+
+
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>Registar Componentes</h1>
+    </div>
+  </div>
+ <ng-container>
+  <div class="container" style="text-align: center;">
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput hidden placeholder="id" formControlName="id">
+      </mat-form-field>
+      <br>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Recomendacion</mat-label>
+        <mat-select formControlName="recomendacion" [(value)]="idRecomendacionSeleccionado" required>
+          <mat-option *ngFor="let a of lista" [value]="a.id">
+            {{a.id}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Marca</mat-label>
+        <input matInput required placeholder="" formControlName="marca">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Puntaje</mat-label>
+        <input matInput required placeholder="" formControlName="puntaje">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>descripcion</mat-label>
+        <input matInput required placeholder="" formControlName="descripcion">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Conjunto de productos</mat-label>
+        <input matInput required placeholder="" formControlName="conjuntodeproductos">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Generación</mat-label>
+        <input matInput required placeholder="" formControlName="generacion">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre de procesador</mat-label>
+        <input matInput required placeholder="" formControlName="nombreprocesador">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Litografia</mat-label>
+        <input matInput required placeholder="" formControlName="litografia">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Precio Recomendacion</mat-label>
+        <input matInput required placeholder="" formControlName="preciorecomendacion">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Velocidad de Memoria RAM</mat-label>
+        <input matInput required placeholder="" formControlName="velocidadmemoriaram">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tipo Chipset</mat-label>
+        <input matInput required placeholder="" formControlName="tipochipset">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Compatibilidad</mat-label>
+        <input matInput required placeholder="" formControlName="compatibilidad">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tipo MMR</mat-label>
+        <input matInput required placeholder="" formControlName="tipommr">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Velocidad de reloj GPU</mat-label>
+        <input matInput required placeholder="" formControlName="velocidadrelojgpu">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tamaño RAM</mat-label>
+        <input matInput required placeholder="maca" formControlName="tamanioram">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tamaño de placa madre</mat-label>
+        <input matInput required placeholder="" formControlName="tamanioplacamadre">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Zocalo</mat-label>
+        <input matInput required placeholder="" formControlName="zocalo">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tamaño memoria</mat-label>
+        <input matInput required placeholder="" formControlName="tamaniomemoria">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tipo de almacenamiento</mat-label>
+        <input matInput required placeholder="" formControlName="tipoalmacenamiento">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tipo de fuente</mat-label>
+        <input matInput required placeholder="" formControlName="tipofuente">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Color</mat-label>
+        <input matInput required placeholder="" formControlName="color">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tamaño</mat-label>
+        <input matInput required placeholder="" formControlName="tamanio">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Certificación</mat-label>
+        <input matInput required placeholder="" formControlName="certificacion">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Vatios</mat-label>
+        <input matInput required placeholder="" formControlName="vatios">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Sistema modular</mat-label>
+        <input matInput required placeholder="" formControlName="sistemamodular">
+      </mat-form-field>
+      <br>
+
+
+
+      <button mat-raised-button type="submit" color="warn" class="mx-3">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/pages/componentes/listar" class="mx-3">Cancelar</button>
+      <p>{{mensaje}}</p>
+
+    </form>
+  </div>
+</ng-container>
+</div>
+</body>
+</html>

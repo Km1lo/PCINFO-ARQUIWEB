@@ -23,8 +23,16 @@ export class ReporteRegistrarComponent implements OnInit{
     maxFecha: Date = moment().add(1, 'days').toDate();
     id: number = 0;
     edicion: boolean = false; //no es edicion
+
+
+
+
     listaUsuario: Usuario[] = [];
     idUsuarioSeleccionado: number = 0;
+
+
+
+
     constructor(
       private ReporteService: ReporteService,
       private router: Router,
@@ -76,12 +84,13 @@ export class ReporteRegistrarComponent implements OnInit{
         let a = new Usuario();
         a.id = this.idUsuarioSeleccionado;
         this.reporte.usuario=a;
+
         this.ReporteService.insert(this.reporte).subscribe(() => {
         this.ReporteService.list().subscribe(data => {
               this.ReporteService.setList(data);
             })
           })
-          this.router.navigate(['/pages/reporte/listar']);
+          this.router.navigate(['/pages/reportes/listar']);
     }
       if (
         this.form.value['descripcion'].length > 0 &&
@@ -97,7 +106,7 @@ export class ReporteRegistrarComponent implements OnInit{
         }
 
 
-        this.router.navigate(['/pages/reporte/listar']);
+        this.router.navigate(['/pages/reportes/listar']);
 
       } else {
         this.mensaje = 'Ingrese la descripcion o estado';

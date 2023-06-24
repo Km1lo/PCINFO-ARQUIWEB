@@ -20,14 +20,26 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioRegistrarComponent } from './usuario/usuario-registrar/usuario-registrar.component';
 import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
 
-const routes: Routes = [
+import { ComponenteComponent } from './componente/componente.component';
+import { ComponenteRegistrarComponent } from './componente/componente-registrar/componente-registrar.component';
+import { ComponenteListarComponent } from './componente/componente-listar/componente-listar.component';
 
+
+
+const routes: Routes = [
   {
     path: 'comentarios', component: ComentarioComponent, children: [
 
       { path:'listar', component:ComentarioListarComponent },
       { path: 'registrar', component: ComentarioRegistrarComponent },
       { path: 'editar/:id', component: ComentarioRegistrarComponent }
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'componentes', component: ComponenteComponent, children: [
+      { path:'listar', component:ComponenteListarComponent },
+      { path: 'registrar', component: ComponenteRegistrarComponent },
+      { path: 'editar/:id', component: ComponenteRegistrarComponent }
     ],canActivate:[GuardService]
   },
   {

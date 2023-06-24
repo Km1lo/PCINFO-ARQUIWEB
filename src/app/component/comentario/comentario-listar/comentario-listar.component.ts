@@ -7,9 +7,6 @@ import { ComentarioDialogoComponent } from './comentario-dialogo/comentario-dial
 import { MatPaginator } from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
 
-
-
-
 @Component({
   selector: 'app-comentario-listar',
   templateUrl: './comentario-listar.component.html',
@@ -22,7 +19,7 @@ export class ComentarioListarComponent implements OnInit {
   dataSource:MatTableDataSource<Comentario> = new MatTableDataSource();
   idMayor: number = 0;
 
-  displayedColumns: string[] = ['id', 'comentario', 'fecha', 'idUsuario', 'accion01', 'accion2']
+  displayedColumns: string[] = ['id', 'comentario', 'fecha', 'usuario', 'accion01', 'accion2']
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
   constructor(private cS:ComentarioService,private dialog: MatDialog) { }

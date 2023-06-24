@@ -85,13 +85,6 @@ export class RecomendacionRegistrarComponent  implements OnInit {
             this.RecomendacionService.setList(data);
           })
         );
-      }else {
-        //registrarlo en la base de  datos
-        this.RecomendacionService.insert(this.recomendacion).subscribe((data) =>
-        this.RecomendacionService.list().subscribe(data=>{
-          this.RecomendacionService.setList(data);
-        })
-        );
       }
       this.router.navigate(['/pages/recomendacion/listar']);
     }

@@ -14,7 +14,6 @@ export class ComentarioDialogoComponent implements OnInit {
     confirmar(estado: boolean){
       this.cS.setConfirmDelete(estado);
       this.dialogRef.close();
-      window.location.reload();
     }
 
 

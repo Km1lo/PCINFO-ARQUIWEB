@@ -6,9 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { ReporteDialogoComponent } from './reporte-dialogo/reporte-dialogo.component';
 import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { Administrador } from 'src/app/model/administrador';
-
-
 
 @Component({
   selector: 'app-reporte-listar',
@@ -56,6 +53,5 @@ eliminar(id: number) {
 filter(e: any) {
   this.dataSource.filter = e.target.value.trim();
 }
-
 }
 

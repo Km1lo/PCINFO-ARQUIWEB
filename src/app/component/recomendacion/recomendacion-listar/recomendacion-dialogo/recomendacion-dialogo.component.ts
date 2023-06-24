@@ -16,8 +16,7 @@ export class RecomendacionDialogoComponent  implements OnInit {
       confirmar(estado:boolean)
       {
         this.as.setConfirmDelete(estado);
-      this.dialogRef.close();
-      window.location.reload();
+        this.dialogRef.close();
       }
 
 

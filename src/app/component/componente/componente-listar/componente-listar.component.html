@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<header >
+  <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
+      <div class="container-fluid">
+        <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/recomendacion/listar" >Recomendacion</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/pages/reportes/listar" >Reporte</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/pages/comentarios/listar" >Comentario</a>
+              </li>
+              <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page"  routerLink="/pages/cuestionarios/listar" >Cuestionario</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/componentes/listar" >Componentes</a>
+            </li>
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/usuario/listar" >Usuario</a>
+            </li>
+              <li>
+                  <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
+
+              </li>
+          </ul>
+          </div>
+      </div>
+  </nav>
+</header>
+<body>
+
+
+  <div style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>COMPONENTES</h1>
+    </div>
+  </div>
+
+  <mat-grid-list cols="1" rowHeight="4em">
+    <mat-grid-tile>
+      <div style="text-align: right;">
+
+        <button mat-raised-button color="warn" routerLink="/pages/componentes/registrar" >Nuevo</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <ng-container *ngFor="let lc of cards">
+    <div class="card" style="width: auto; display: inline-block; margin: 20px;">
+      <div class="card-body">
+        <h2 class="card-title">Componente Id: {{lc.id}}</h2>
+        <p class="card-text">Recomendacion: {{lc.recomendacion.id}}</p>
+        <p class="card-text">Marca: {{lc.marca}}</p>
+        <p class="card-text">Puntaje: {{lc.puntaje}}</p>
+        <p class="card-text">Descripcion:{{lc.descripcion}}</p>
+        <p class="card-text">Conjunto De Productos {{lc.conjuntodeproductos}}</p>
+        <p class="card-text">Generación: {{lc.generacion}}</p>
+        <p class="card-text">Nombre Procesador: {{lc.nombreprocesador}}</p>
+        <p class="card-text">Litografía: {{lc.litografia}}</p>
+        <p class="card-text">Precio Recomendación: {{lc.preciorecomendacion}}</p>
+        <p class="card-text">Velocidad de Memoria RAM: {{lc.velocidadmemoriaram}}</p>
+        <p class="card-text">Tipo Chipset: {{lc.tipochipset}}</p>
+        <p class="card-text">Compatibilidad: {{lc.compatibilidad}}</p>
+        <p class="card-text">Tipo MMR:{{lc.tipommr}}</p>
+        <p class="card-text">Velocidad de reloj GPU: {{lc.velocidadrelojgpu}}</p>
+        <p class="card-text">Tamaño de RAM: {{lc.tamanioram}}</p>
+        <p class="card-text">Tamaño de placa madre: {{lc.tamanioplacamadre}}</p>
+        <p class="card-text">Zocalo: {{lc.zocalo}}</p>
+        <p class="card-text">Tamaño de memoria: {{lc.tamaniomemoria}}</p>
+        <p class="card-text">Tipo de almacenamiento: {{lc.tipoalmacenamiento}}</p>
+        <p class="card-text">Tipo de fuente: {{lc.tipofuente}}</p>
+        <p class="card-text">Color: {{lc.color}}</p>
+        <p class="card-text">Tamaño: {{lc.tamanio}}</p>
+        <p class="card-text">Certificación{{lc.certificacion}}</p>
+        <p class="card-text">Vatios: {{lc.vatios}}</p>
+        <p class="card-text">Sistema modular: {{lc.sistemamodular}}</p>
+        <div style="text-align: center;">
+          <button mat-raised-button color="warn"
+          [routerLink]="['/pages/componentes/editar',lc.id]"><i class="fa-solid fa-rotate" style="color: #ffffff;"></i></button>
+          <button mat-raised-button color="warn" (click)="confirm(lc.id)" style="margin-left: 10px;"><span class="material-icons">delete</span></button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+
+
+
+</body>
+</html>

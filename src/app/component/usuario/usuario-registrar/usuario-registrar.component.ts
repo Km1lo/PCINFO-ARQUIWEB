@@ -82,28 +82,29 @@ export class UsuarioRegistrarComponent implements OnInit {
     this.usuarioo.pais = this.form.value['pais'];
 
 
-    if(this.form.value['contrasenia'].length > 0 && this.form.value['dni'].length > 0){
 
-      if(this.edicion){
-        this.UsuarioService.update(this.usuarioo).subscribe((data) =>
-          this.UsuarioService.list().subscribe(data=>{
-            this.UsuarioService.setList(data);
-          })
+  if(this.form.value['contrasenia'].length > 0){
 
-        );
-      } else {
-        this.UsuarioService.insert(this.usuarioo).subscribe((data) =>
-          this.UsuarioService.list().subscribe(data=>{
-            this.UsuarioService.setList(data);
-          })
-        );
-      }
+    if(this.edicion){
+      this.UsuarioService.update(this.usuarioo).subscribe((data) =>{
+        this.UsuarioService.list().subscribe(data=>{
+          this.UsuarioService.setList(data);
+        })
+      })
       this.router.navigate(['/pages/usuario/listar']);
+    } else {
+      this.UsuarioService.insert(this.usuarioo).subscribe((data) =>
+        this.UsuarioService.list().subscribe(data=>{
+          this.UsuarioService.setList(data);
+        })
+      );
     }
-    else {
-      this.mensaje = "Llene todos los campos";
-    }
+    this.router.navigate(['/pages/usuario/listar']);
   }
+  else {
+    this.mensaje = "Llene todos los campos";
+  }
+}
 
 
 }

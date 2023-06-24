@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ReporteService } from 'src/app/service/reporte.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-reporte-dialogo',
@@ -8,13 +9,13 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./reporte-dialogo.component.css']
 })
 export class ReporteDialogoComponent implements OnInit {
+    role:string="";
   constructor(private aS: ReporteService,
-    private dialogRef: MatDialogRef<ReporteDialogoComponent>) { }
+    private dialogRef: MatDialogRef<ReporteDialogoComponent>, private ls:LoginService) { }
   ngOnInit(): void {}
     confirmar(estado: boolean){
       this.aS.setConfirmDelete(estado);
       this.dialogRef.close();
-      window.location.reload();
     }
 
 }

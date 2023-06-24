@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+
+import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
@@ -40,6 +42,11 @@ import { UsuarioRegistrarComponent } from './usuario/usuario-registrar/usuario-r
 import { UsuarioDialogoComponent } from './usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarIndexComponent } from './toolbar/toolbar-index/toolbar-index.component';
+import { ComponenteComponent } from './componente/componente.component';
+import { ComponenteListarComponent } from './componente/componente-listar/componente-listar.component';
+import { ComponenteDialogoComponent } from './componente/componente-listar/componente-dialogo/componente-dialogo.component';
+import { ComponenteRegistrarComponent } from './componente/componente-registrar/componente-registrar.component';
+
 @NgModule({
   declarations: [
 
@@ -64,7 +71,11 @@ import { ToolbarIndexComponent } from './toolbar/toolbar-index/toolbar-index.com
     UsuarioRegistrarComponent,
     UsuarioDialogoComponent,
     ToolbarComponent,
-    ToolbarIndexComponent
+    ToolbarIndexComponent,
+    ComponenteComponent,
+    ComponenteListarComponent,
+    ComponenteDialogoComponent,
+    ComponenteRegistrarComponent
   ],
   imports: [
     CommonModule,
@@ -83,8 +94,8 @@ import { ToolbarIndexComponent } from './toolbar/toolbar-index/toolbar-index.com
     MatSelectModule,
     MatCheckboxModule,
     RouterModule,
-    PagesRoutingModule
-
+    PagesRoutingModule,
+    MatCardModule
   ],
   exports: [
     MatFormFieldModule

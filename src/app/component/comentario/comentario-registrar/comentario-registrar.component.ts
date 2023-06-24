@@ -22,7 +22,7 @@ export class ComentarioRegistrarComponent implements OnInit {
   id: number = 0;
   edicion: boolean = false; //no es edicion
 
-//PARA FK
+  //PARA FK
   listaUsuario: Usuario[] = [];
   idUsuarioSeleccionado: number = 0;
   //
@@ -49,7 +49,7 @@ export class ComentarioRegistrarComponent implements OnInit {
       id: new FormControl(),
       comentario: new FormControl(),
       fecha: new FormControl(),
-      idUsuario: new FormControl()
+      usuario: new FormControl()
 
     })
   }
@@ -61,7 +61,7 @@ export class ComentarioRegistrarComponent implements OnInit {
           id: new FormControl(data.id),
           comentario: new FormControl(data.comentario),
           fecha: new FormControl(data.fecha),
-          idUsuario: new FormControl(data.idUsuario)
+          usuario: new FormControl(data.usuario)
         });
       });
     }
@@ -75,19 +75,25 @@ aceptar(): void {
   this.comentarioo.id = this.form.value['id'];
   this.comentarioo.comentario = this.form.value['comentario'];
   this.comentarioo.fecha = this.form.value['fecha'];
-  this.comentarioo.idUsuario.nombre = this.form.value['idUsuario.nombre'];
+  this.comentarioo.usuario.nombre = this.form.value['usuario.nombre'];
 
   if (this.idUsuarioSeleccionado>0) {
+
+
+
     let a = new Usuario();
     a.id = this.idUsuarioSeleccionado;
-    this.comentarioo.idUsuario=a;
+    this.comentarioo.usuario=a;
+
+
+
     this.ComentarioService.insert(this.comentarioo).subscribe(() => {
     this.ComentarioService.list().subscribe(data => {
           this.ComentarioService.setList(data);
         })
       })
       this.router.navigate(['/pages/comentarios/listar']);
-}
+  }
 
 
 

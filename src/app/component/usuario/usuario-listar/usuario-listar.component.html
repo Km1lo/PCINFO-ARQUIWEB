@@ -27,6 +27,9 @@
                   <a class="nav-link active" aria-current="page"  routerLink="/pages/cuestionarios/listar" >Cuestionario</a>
               </li>
               <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/componentes/listar" >Componentes</a>
+            </li>
+              <li class="nav-item px-3">
                 <a class="nav-link active" aria-current="page"  routerLink="/pages/usuario/listar" >Usuario</a>
             </li>
               <li>
@@ -129,8 +132,8 @@
         </ng-container>
 
         <ng-container matColumnDef="accion01">
-          <th mat-header-cell [hidden]="role=='USER'" *matHeaderCellDef> Acciones </th>
-          <td mat-cell [hidden]="role=='USER'" *matCellDef="let element">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
           <button mat-raised-button color="warn"
               [routerLink]="['/pages/usuario/editar',element.id]"><i class="fa-solid fa-rotate" style="color: #ffffff;"></i></button>
           </td>

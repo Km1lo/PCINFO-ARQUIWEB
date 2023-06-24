@@ -14,6 +14,5 @@ export class CuestionarioDialogoComponent implements OnInit{
     confirmar(estado: boolean){
       this.aS.setConfirmDelete(estado);
       this.dialogRef.close();
-      window.location.reload();
     }
 }
