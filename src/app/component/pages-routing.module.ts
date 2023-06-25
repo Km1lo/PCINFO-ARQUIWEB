@@ -25,6 +25,7 @@ import { ComponenteRegistrarComponent } from './componente/componente-registrar/
 import { ComponenteListarComponent } from './componente/componente-listar/componente-listar.component';
 import { Consulta01Component } from './consulta/consulta01/consulta01.component';
 import { ConsultaComponent } from './consulta/consulta.component';
+import { Consultacamilo01UsuarioComentarioComponent } from './consulta/consultacamilo01-usuario-comentario/consultacamilo01-usuario-comentario.component';
 
 
 const routes: Routes = [
@@ -79,6 +80,7 @@ const routes: Routes = [
     path: 'consultas', component: ConsultaComponent, children: [
 
       { path: 'reporte-count-usuario', component: Consulta01Component },
+      { path: 'usuario-count-comentario', component: Consultacamilo01UsuarioComentarioComponent }
     ],canActivate:[GuardService]
    }
 

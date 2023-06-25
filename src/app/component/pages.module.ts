@@ -48,6 +48,7 @@ import { ComponenteDialogoComponent } from './componente/componente-listar/compo
 import { ComponenteRegistrarComponent } from './componente/componente-registrar/componente-registrar.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { Consulta01Component } from './consulta/consulta01/consulta01.component';
+import { Consultacamilo01UsuarioComentarioComponent } from './consulta/consultacamilo01-usuario-comentario/consultacamilo01-usuario-comentario.component';
 
 @NgModule({
 
@@ -81,6 +82,7 @@ import { Consulta01Component } from './consulta/consulta01/consulta01.component'
     ComponenteRegistrarComponent,
     ConsultaComponent,
     Consulta01Component,
+    Consultacamilo01UsuarioComentarioComponent,
 
     ],
   imports: [
