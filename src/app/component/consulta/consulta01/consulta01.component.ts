@@ -9,7 +9,7 @@ import { ReporteService } from 'src/app/service/reporte.service';
   styleUrls: ['./consulta01.component.css']
 })
 export class Consulta01Component  implements OnInit{
-  reporteCount:reporteUsuarioDTO[] = [];
+  reporteCounts:reporteUsuarioDTO[] = [];
   dataSource:MatTableDataSource<reporteUsuarioDTO> = new MatTableDataSource();
   displayedColumns:string[] = ['usuario','cantidad']
   constructor(private rS: ReporteService) { }
@@ -22,7 +22,7 @@ export class Consulta01Component  implements OnInit{
   getReporteCountByUsuario(): void {
     this.rS.getReporteCountByUsuario()
       .subscribe((data: reporteUsuarioDTO[]) => {
-        this.reporteCount = data;
+        this.reporteCounts = data;
       });
 
   }

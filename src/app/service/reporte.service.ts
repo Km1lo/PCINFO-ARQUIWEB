@@ -59,9 +59,13 @@ getList()
   return this.listaCambio.asObservable();
 }
 
-getReporteCountByUsuario(): Observable<reporteUsuarioDTO[]> {
 
-  return this.http.get<reporteUsuarioDTO[]>(`${this.url}/reporte-count`);
+getReporteCountByUsuario(): Observable<reporteUsuarioDTO[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.get<reporteUsuarioDTO[]>(`${this.url}/reporte-count`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
 }
+
 }
 
