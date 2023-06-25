@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -46,8 +46,11 @@ import { ComponenteComponent } from './componente/componente.component';
 import { ComponenteListarComponent } from './componente/componente-listar/componente-listar.component';
 import { ComponenteDialogoComponent } from './componente/componente-listar/componente-dialogo/componente-dialogo.component';
 import { ComponenteRegistrarComponent } from './componente/componente-registrar/componente-registrar.component';
+import { ConsultaComponent } from './consulta/consulta.component';
+import { Consulta01Component } from './consulta/consulta01/consulta01.component';
 
 @NgModule({
+
   declarations: [
 
     ComentarioComponent,
@@ -75,8 +78,11 @@ import { ComponenteRegistrarComponent } from './componente/componente-registrar/
     ComponenteComponent,
     ComponenteListarComponent,
     ComponenteDialogoComponent,
-    ComponenteRegistrarComponent
-  ],
+    ComponenteRegistrarComponent,
+    ConsultaComponent,
+    Consulta01Component,
+
+    ],
   imports: [
     CommonModule,
     HttpClientModule,

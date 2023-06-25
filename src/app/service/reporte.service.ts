@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Reporte } from '../model/reporte';
-import { Subject } from 'rxjs';
+import { Subject,Observable } from 'rxjs';
+import { reporteUsuarioDTO } from '../model/reporteUsuarioDTO';
 
 const base_url = environment.base
 @Injectable({
@@ -57,4 +58,10 @@ getList()
 {
   return this.listaCambio.asObservable();
 }
+
+getReporteCountByUsuario(): Observable<reporteUsuarioDTO[]> {
+
+  return this.http.get<reporteUsuarioDTO[]>(`${this.url}/reporte-count`);
 }
+}
+

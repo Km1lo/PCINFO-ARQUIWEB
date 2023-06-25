@@ -24,13 +24,15 @@ import { LoginMostrarComponent } from './component/login/login-mostrar/login-mos
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     IndexaComponent,
     IndexMostrarComponent,
     LoginComponent,
-    LoginMostrarComponent
+    LoginMostrarComponent,
+
   ],
   imports: [
     BrowserModule,

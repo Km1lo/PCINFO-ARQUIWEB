@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <div class="container">
+    <div style=" text-align: center;">
+      <h1>Top 5 por autor</h1>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef> Reporte </th>
+        <td mat-cell *matCellDef="let element of reportesCount"> {{element.nombre}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef> Cantidad de reporte </th>
+        <td mat-cell *matCellDef="let element of reportesCount"> {{element.reporteCount}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</body>
+
+</html>
