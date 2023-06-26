@@ -28,6 +28,7 @@ import { ConsultaComponent } from './consulta/consulta.component';
 import { Consultacamilo01UsuarioComentarioComponent } from './consulta/consultacamilo01-usuario-comentario/consultacamilo01-usuario-comentario.component';
 import { Consultawedy01RecomendacionCuestionarioComponent } from './consulta/consultawedy01-recomendacion-cuestionario/consultawedy01-recomendacion-cuestionario.component';
 import { Consultacamilo02UsuarioComentarioFechaComponent } from './consulta/consultacamilo02-usuario-comentario-fecha/consultacamilo02-usuario-comentario-fecha.component';
+import { Consultawedy02RecomendacionCuestionarioComponent } from './consulta/consultawedy02-recomendacion-cuestionario/consultawedy02-recomendacion-cuestionario.component';
 
 const routes: Routes = [
   {
@@ -83,8 +84,8 @@ const routes: Routes = [
       { path: 'reporte-count-usuario', component: Consulta01Component },
       { path: 'usuario-count-comentario', component: Consultacamilo01UsuarioComentarioComponent },
       {path:'recomendacion-cuestionario' ,component:Consultawedy01RecomendacionCuestionarioComponent},
-      { path: 'usuario-fecha-comentario', component: Consultacamilo02UsuarioComentarioFechaComponent}
-
+      { path: 'usuario-fecha-comentario', component: Consultacamilo02UsuarioComentarioFechaComponent},
+      {path:'recomendacion-promedio', component:Consultawedy02RecomendacionCuestionarioComponent}
 
     ],canActivate:[GuardService]
    }

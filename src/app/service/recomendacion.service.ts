@@ -66,5 +66,11 @@ getRecomendacionCuestionario(): Observable<recomendacionCuestionarioDTO[]>
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   });
 }
-
+getPromedioRecomendacion(): Observable<recomendacionCuestionarioDTO[]>
+{
+  let token = sessionStorage.getItem("token");
+  return this.http.get<recomendacionCuestionarioDTO[]>(`${this.url}/recomendacion-promedio-list`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
 }

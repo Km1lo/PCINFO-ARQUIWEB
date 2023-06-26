@@ -51,6 +51,7 @@ import { Consulta01Component } from './consulta/consulta01/consulta01.component'
 import { Consultacamilo01UsuarioComentarioComponent } from './consulta/consultacamilo01-usuario-comentario/consultacamilo01-usuario-comentario.component';
 import { Consultawedy01RecomendacionCuestionarioComponent } from './consulta/consultawedy01-recomendacion-cuestionario/consultawedy01-recomendacion-cuestionario.component';
 import { Consultacamilo02UsuarioComentarioFechaComponent } from './consulta/consultacamilo02-usuario-comentario-fecha/consultacamilo02-usuario-comentario-fecha.component';
+import { Consultawedy02RecomendacionCuestionarioComponent } from './consulta/consultawedy02-recomendacion-cuestionario/consultawedy02-recomendacion-cuestionario.component';
 @NgModule({
 
   declarations: [
@@ -85,7 +86,8 @@ import { Consultacamilo02UsuarioComentarioFechaComponent } from './consulta/cons
     Consulta01Component,
     Consultacamilo01UsuarioComentarioComponent,
     Consultawedy01RecomendacionCuestionarioComponent,
-    Consultacamilo02UsuarioComentarioFechaComponent
+    Consultacamilo02UsuarioComentarioFechaComponent,
+    Consultawedy02RecomendacionCuestionarioComponent
     ],
   imports: [
     CommonModule,
