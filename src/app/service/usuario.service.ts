@@ -67,6 +67,11 @@ getUsuarioComentario(): Observable<usuarioComentarioDTO[]>{
   });
 }
 
-
+getUsuarioComentarioFecha(): Observable<usuarioComentarioDTO[]>{
+  let token = sessionStorage.getItem("token");
+  return this.http.get<usuarioComentarioDTO[]>(`${this.url}/usuario-comentario-fecha`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
 
 }
