@@ -50,7 +50,7 @@ import { ConsultaComponent } from './consulta/consulta.component';
 import { Consulta01Component } from './consulta/consulta01/consulta01.component';
 import { Consultacamilo01UsuarioComentarioComponent } from './consulta/consultacamilo01-usuario-comentario/consultacamilo01-usuario-comentario.component';
 import { Consultawedy01RecomendacionCuestionarioComponent } from './consulta/consultawedy01-recomendacion-cuestionario/consultawedy01-recomendacion-cuestionario.component';
-
+import { Consultacamilo02UsuarioComentarioFechaComponent } from './consulta/consultacamilo02-usuario-comentario-fecha/consultacamilo02-usuario-comentario-fecha.component';
 @NgModule({
 
   declarations: [
@@ -85,7 +85,7 @@ import { Consultawedy01RecomendacionCuestionarioComponent } from './consulta/con
     Consulta01Component,
     Consultacamilo01UsuarioComentarioComponent,
     Consultawedy01RecomendacionCuestionarioComponent,
-
+    Consultacamilo02UsuarioComentarioFechaComponent
     ],
   imports: [
     CommonModule,
