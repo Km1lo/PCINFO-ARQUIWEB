@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GuardService } from '../service/guard.service';
 import { ComentarioComponent } from './comentario/comentario.component';
@@ -27,7 +27,9 @@ import { Consulta01Component } from './consulta/consulta01/consulta01.component'
 import { ConsultaComponent } from './consulta/consulta.component';
 import { Consultacamilo01UsuarioComentarioComponent } from './consulta/consultacamilo01-usuario-comentario/consultacamilo01-usuario-comentario.component';
 import { Consulta02JeanComponent } from './consulta/consulta02-jean/consulta02-jean.component';
-
+import { Consultawedy01RecomendacionCuestionarioComponent } from './consulta/consultawedy01-recomendacion-cuestionario/consultawedy01-recomendacion-cuestionario.component';
+import { Consultacamilo02UsuarioComentarioFechaComponent } from './consulta/consultacamilo02-usuario-comentario-fecha/consultacamilo02-usuario-comentario-fecha.component';
+import { Consultawedy02RecomendacionCuestionarioComponent } from './consulta/consultawedy02-recomendacion-cuestionario/consultawedy02-recomendacion-cuestionario.component';
 
 const routes: Routes = [
   {
@@ -80,6 +82,10 @@ const routes: Routes = [
   {
     path: 'consultas', component: ConsultaComponent, children: [
 
+      {path:'usuario-count-comentario',component:Consultacamilo01UsuarioComentarioComponent},
+      {path:'recomendacion-cuestionario', component:Consultawedy01RecomendacionCuestionarioComponent},
+      {path:'usuario-fecha-comentario', component:Consultacamilo02UsuarioComentarioFechaComponent},
+      {path:'recomendacion-promedio',component:Consultawedy02RecomendacionCuestionarioComponent},
       { path: 'reporte-count-usuario', component: Consulta01Component },
       { path: 'reporte-count-estado', component: Consultacamilo01UsuarioComentarioComponent },
       { path: 'reporte-count2-usuario', component: Consulta02JeanComponent }
