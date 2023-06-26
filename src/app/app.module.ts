@@ -33,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
     LoginComponent,
     LoginMostrarComponent,
 
+
   ],
   imports: [
     BrowserModule,

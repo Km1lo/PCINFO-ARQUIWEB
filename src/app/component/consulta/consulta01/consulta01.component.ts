@@ -11,7 +11,7 @@ import { ReporteService } from 'src/app/service/reporte.service';
 export class Consulta01Component  implements OnInit{
   reporteCounts:reporteUsuarioDTO[] = [];
   dataSource:MatTableDataSource<reporteUsuarioDTO> = new MatTableDataSource();
-  displayedColumns:string[] = ['usuario','cantidad']
+  displayedColumns:string[] = ['usuario','apellidop','cantidad']
   constructor(private rS: ReporteService) { }
 
   ngOnInit(): void {

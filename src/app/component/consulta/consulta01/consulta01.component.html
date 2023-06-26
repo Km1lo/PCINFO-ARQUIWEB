@@ -40,7 +40,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" routerLink="/pages/consultas/reporte-count-usuario">Jean Sanabria 1</a></li>
-                <li><a class="dropdown-item" href="#">Jean Sanabria 2</a></li>
+                <li><a class="dropdown-item"routerLink="/pages/consultas/reporte-count2-usuario">Jean Sanabria 2</a></li>
                 <li><a class="dropdown-item" routerLink="/pages/consultas/usuario-count-comentario">Camilo Adama 1</a></li>
                 <li><a class="dropdown-item" href="#">Camilo Adama 2</a></li>
                 <li><a class="dropdown-item" href="#">Anthony Carhuancho 1</a></li>
@@ -65,17 +65,22 @@
 
   <div class="container">
     <div style=" text-align: center;">
-      <h1>Top 5 por autor</h1>
+      <h1>Lista de usuarios con la cantidad de reporte ingresado </h1>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="usuario">
-        <th mat-header-cell *matHeaderCellDef> Reporte </th>
+        <th mat-header-cell *matHeaderCellDef> Nombre de Usuario </th>
         <td mat-cell *matCellDef="let element of reporteCounts"> {{element.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="apellidop">
+        <th mat-header-cell *matHeaderCellDef> Apellido </th>
+        <td mat-cell *matCellDef="let element of reporteCounts"> {{element.apellidop}} </td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="cantidad">
-        <th mat-header-cell *matHeaderCellDef> Cantidad de reporte </th>
+        <th mat-header-cell *matHeaderCellDef> Cantidad de Reporte</th>
         <td mat-cell *matCellDef="let element of reporteCounts"> {{element.reporteCount}} </td>
       </ng-container>
 

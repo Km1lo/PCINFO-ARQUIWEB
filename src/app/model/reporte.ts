@@ -9,3 +9,5 @@ export class Reporte {
   usuario:Usuario=new Usuario()
 
 }
+
+
