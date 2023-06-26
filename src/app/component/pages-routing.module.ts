@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GuardService } from '../service/guard.service';
 import { ComentarioComponent } from './comentario/comentario.component';
@@ -26,6 +26,7 @@ import { ComponenteListarComponent } from './componente/componente-listar/compon
 import { Consulta01Component } from './consulta/consulta01/consulta01.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { Consultacamilo01UsuarioComentarioComponent } from './consulta/consultacamilo01-usuario-comentario/consultacamilo01-usuario-comentario.component';
+import { Consultawedy01RecomendacionCuestionarioComponent } from './consulta/consultawedy01-recomendacion-cuestionario/consultawedy01-recomendacion-cuestionario.component';
 
 
 const routes: Routes = [
@@ -80,7 +81,10 @@ const routes: Routes = [
     path: 'consultas', component: ConsultaComponent, children: [
 
       { path: 'reporte-count-usuario', component: Consulta01Component },
-      { path: 'usuario-count-comentario', component: Consultacamilo01UsuarioComentarioComponent }
+      { path: 'usuario-count-comentario', component: Consultacamilo01UsuarioComentarioComponent },
+      {path:'recomendacion-cuestionario' ,component:Consultawedy01RecomendacionCuestionarioComponent}
+
+
     ],canActivate:[GuardService]
    }
 

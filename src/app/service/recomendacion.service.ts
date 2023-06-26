@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Recomendacion } from '../model/recomendacion';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { recomendacionCuestionarioDTO } from '../model/recomendacionCuestionarioDTO';
 
 const base_url=environment.base
 @Injectable({
@@ -57,4 +58,13 @@ getList()
 {
   return this.listaCambio.asObservable();
 }
+
+getRecomendacionCuestionario(): Observable<recomendacionCuestionarioDTO[]>
+{
+  let token = sessionStorage.getItem("token");
+  return this.http.get<recomendacionCuestionarioDTO[]>(`${this.url}/recomendacion-cuestionario-list`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
+
 }
