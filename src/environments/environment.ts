@@ -1,6 +1,5 @@
 export const environment = {
   production: false,
-  base: "http://localhost:8080",
-  //base: "https://backend-pcinfo-aw.onrender.com",
-  apiKey: "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"
+  base: "https://pcinfobackendaw6.onrender.com",
+  apiKey: "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"
 }

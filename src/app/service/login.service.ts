@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(request: JwtRequest) {
-    return this.http.post("https://backend-pcinfo-aw.onrender.com/authenticate", request);
+    return this.http.post("https://pcinfobackendaw6.onrender.com/authenticate", request);
   }
   verificar() {
     let token = sessionStorage.getItem("token");
