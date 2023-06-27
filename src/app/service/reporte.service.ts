@@ -73,6 +73,12 @@ getReporteByEstado(): Observable<reporteUsuarioDTO[]> {
   });
 }
 
+getReporte1ByEstado(): Observable<reporteUsuarioDTO[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.get<reporteUsuarioDTO[]>(`${this.url}/reporte-estado`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
 
 
 

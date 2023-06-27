@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Usuario } from '../model/usuario';
 import { Subject,Observable } from 'rxjs';
 import { usuarioComentarioDTO } from '../model/usuarioComentarioDTO';
+import { usuarioCuestionarioDTO } from '../model/usuarioCuestionarioDTO';
 const base_url = environment.base
 
 @Injectable({
@@ -70,6 +71,14 @@ getUsuarioComentario(): Observable<usuarioComentarioDTO[]>{
 getUsuarioComentarioFecha(): Observable<usuarioComentarioDTO[]>{
   let token = sessionStorage.getItem("token");
   return this.http.get<usuarioComentarioDTO[]>(`${this.url}/usuario-comentario-fecha`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
+
+
+getUsuarioCuestionario(): Observable<usuarioCuestionarioDTO[]>{
+  let token = sessionStorage.getItem("token");
+  return this.http.get<usuarioCuestionarioDTO[]>(`${this.url}/usuario-cuestionario-count`, {
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   });
 }

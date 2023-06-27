@@ -7,59 +7,66 @@
 </head>
 <header >
   <nav class="navbar-expand-lg navbar navbar-dark " style="background-color: #121212;">
-      <div class="container-fluid">
-        <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-              <li class="nav-item px-3">
-                <a class="nav-link active" aria-current="page"  routerLink="/pages/recomendacion/listar" >Recomendacion</a>
-              </li>
-              <li class="nav-item px-3">
-                  <a class="nav-link active" aria-current="page"  routerLink="/pages/reportes/listar" >Reporte</a>
-              </li>
-              <li class="nav-item px-3">
-                  <a class="nav-link active" aria-current="page"  routerLink="/pages/comentarios/listar" >Comentario</a>
-              </li>
-              <li class="nav-item px-3">
-                  <a class="nav-link active" aria-current="page"  routerLink="/pages/cuestionarios/listar" >Cuestionario</a>
-              </li>
-              <li class="nav-item px-3">
-                <a class="nav-link active" aria-current="page"  routerLink="/pages/componentes/listar" >Componentes</a>
+    <div class="container-fluid">
+      <img src="assets/logo.jpg" alt="Logo" width="50" height="50">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <a class="nav-link active" aria-current="page" routerLink="/pages/chatgpt" class="btn-neon">
+              <span id="span1"></span>
+              <span id="span2"></span>
+              <span id="span3"></span>
+              <span id="span4"></span>
+              CHAT GPT
+          </a>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page"  routerLink="/pages/recomendacion/listar" >Recomendacion</a>
             </li>
-              <li class="nav-item px-3">
-                <a class="nav-link active" aria-current="page"  routerLink="/pages/usuario/listar" >Usuario</a>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/reportes/listar" >Reporte</a>
             </li>
-            <li class="nav-item dropdown px-3">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Consultas
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" routerLink="/pages/consultas/reporte-count-usuario">Jean Sanabria 1</a></li>
-                <li><a class="dropdown-item" href="#">Jean Sanabria 2</a></li>
-                <li><a class="dropdown-item" routerLink="/pages/consultas/usuario-count-comentario">Camilo Adama 1</a></li>
-                <li><a class="dropdown-item" href="#">Camilo Adama 2</a></li>
-                <li><a class="dropdown-item" href="#">Anthony Carhuancho 1</a></li>
-                <li><a class="dropdown-item" href="#">Anthony Carhuancho 2</a></li>
-                <li><a class="dropdown-item" href="#">Fabian Diaz 1</a></li>
-                <li><a class="dropdown-item" href="#">Fabian Diaz 2</a></li>
-                <li><a class="dropdown-item" href="#">Walter Delgado 1</a></li>
-                <li><a class="dropdown-item" href="#">Walter Delgado 2</a></li>
-              </ul>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/comentarios/listar" >Comentario</a>
             </li>
-            <li>
-              <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
+            <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page"  routerLink="/pages/cuestionarios/listar" >Cuestionario</a>
             </li>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page"  routerLink="/pages/componentes/listar" >Componentes</a>
+          </li>
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page"  routerLink="/pages/usuario/listar" >Usuario</a>
+          </li>
+          <li class="nav-item dropdown px-3">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Consultas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/pages/consultas/reporte-count-usuario">Jean Sanabria 1</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/reporte-count2-usuario">Jean Sanabria 2</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/usuario-count-comentario">Camilo Adama 1</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/usuario-fecha-comentario">Camilo Adama 2</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/reporte-estado-usuario">Anthony Carhuancho 1</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/cuestionario-count-usuario">Anthony Carhuancho 2</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/cuestionario-procesador-usuario">Fabian Diaz 1</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/cuestionario-procesador2-usuario">Fabian Diaz 2</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/recomendacion-cuestionario">Walter Delgado 1</a></li>
+              <li><a class="dropdown-item" routerLink="/pages/consultas/recomendacion-promedio">Walter Delgado 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <button mat-raised-button color="warn" routerLink="/login">Cerrar Sesion</button>
+          </li>
 
-          </ul>
-          </div>
-      </div>
-  </nav>
+        </ul>
+        </div>
+    </div>
+</nav>
 </header>
 <body>
-  <div class="container">
+  <div class="container-lg" style="margin-top: 50px;">
     <div style=" text-align: center;">
       <h1>Lista de Usuarios con la cantidad de comentarios</h1>
     </div>

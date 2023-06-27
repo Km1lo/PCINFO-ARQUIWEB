@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Cuestionario } from '../model/cuestionario';
-import { Subject } from 'rxjs';
+import { Subject, Observable} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { cuestionarioUsuarioDTO } from '../model/cuestionarioUsuarioDTO';
 
 const base_url=environment.base
 @Injectable({
@@ -56,5 +57,27 @@ setList(listaNueva: Cuestionario[]) {
 getList()
 {
   return this.listaCambio.asObservable();
+}
+
+getCuestionarioByUsuario(): Observable<cuestionarioUsuarioDTO[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.get<cuestionarioUsuarioDTO[]>(`${this.url}/cuestionario-count`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
+
+getCuestionario1EstadoByUsuario(): Observable<cuestionarioUsuarioDTO[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.get<cuestionarioUsuarioDTO[]>(`${this.url}/cuestionario-procesador`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
+
+
+getCuestionario2EstadoByUsuario(): Observable<cuestionarioUsuarioDTO[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.get<cuestionarioUsuarioDTO[]>(`${this.url}/cuestionario-procesador2`, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
 }
 }

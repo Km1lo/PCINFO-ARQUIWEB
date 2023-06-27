@@ -30,6 +30,11 @@ import { Consulta02JeanComponent } from './consulta/consulta02-jean/consulta02-j
 import { Consultawedy01RecomendacionCuestionarioComponent } from './consulta/consultawedy01-recomendacion-cuestionario/consultawedy01-recomendacion-cuestionario.component';
 import { Consultacamilo02UsuarioComentarioFechaComponent } from './consulta/consultacamilo02-usuario-comentario-fecha/consultacamilo02-usuario-comentario-fecha.component';
 import { Consultawedy02RecomendacionCuestionarioComponent } from './consulta/consultawedy02-recomendacion-cuestionario/consultawedy02-recomendacion-cuestionario.component';
+import { ChatgptIndexComponent } from './chatgpt/chatgpt-index/chatgpt-index.component';
+import { Consulta01AnthComponent } from './consulta/consulta01-anth/consulta01-anth.component';
+import { Consulta01FabianComponent } from './consulta/consulta01-fabian/consulta01-fabian.component';
+import { Consulta02FabianComponent } from './consulta/consulta02-fabian/consulta02-fabian.component';
+import { Consulta02AnthComponent } from './consulta/consulta02-anth/consulta02-anth.component';
 
 const routes: Routes = [
   {
@@ -83,13 +88,29 @@ const routes: Routes = [
     path: 'consultas', component: ConsultaComponent, children: [
 
       {path:'usuario-count-comentario',component:Consultacamilo01UsuarioComentarioComponent},
-      {path:'recomendacion-cuestionario', component:Consultawedy01RecomendacionCuestionarioComponent},
       {path:'usuario-fecha-comentario', component:Consultacamilo02UsuarioComentarioFechaComponent},
+
+
+      {path:'recomendacion-cuestionario', component:Consultawedy01RecomendacionCuestionarioComponent},
       {path:'recomendacion-promedio',component:Consultawedy02RecomendacionCuestionarioComponent},
+
+
       { path: 'reporte-count-usuario', component: Consulta01Component },
-      { path: 'reporte-count-estado', component: Consultacamilo01UsuarioComentarioComponent },
-      { path: 'reporte-count2-usuario', component: Consulta02JeanComponent }
+      { path: 'reporte-count2-usuario', component: Consulta02JeanComponent },
+
+
+      { path: 'reporte-estado-usuario', component: Consulta01AnthComponent },
+      { path: 'cuestionario-count-usuario', component: Consulta02AnthComponent },
+
+
+      { path: 'cuestionario-procesador-usuario', component: Consulta01FabianComponent },
+      { path: 'cuestionario-procesador2-usuario', component: Consulta02FabianComponent }
+
+
     ],canActivate:[GuardService]
+   },
+   {
+    path: 'chatgpt', component: ChatgptIndexComponent, canActivate:[GuardService]
    }
 
 

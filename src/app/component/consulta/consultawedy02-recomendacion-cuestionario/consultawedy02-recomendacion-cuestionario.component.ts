@@ -17,7 +17,9 @@ export class Consultawedy02RecomendacionCuestionarioComponent implements OnInit{
 
 
   ngOnInit(): void {
-
+    this.rS.getPromedioRecomendacion().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+    })
   }
   getPromedioRecomendacion(): void {
     this.rS.getPromedioRecomendacion()
